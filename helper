@@ -1,0 +1,66 @@
+#!/bin/sh
+# 
+# author Jaroslav Vitku [vitkujar@fel.cvut.cz]
+#
+# This script helps you to create new project with java-based implementaiton of (Nengo)ROS nodes.
+# 
+# Basically, it copies the template project into the nengoros folder. 
+#
+# For detailed information, read the helperdata/README.md, for basic info, run ./helper -h
+#
+#
+# Args parsing based on: http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
+
+usage()
+{
+
+    echo "\nThis script helps you to create new project with java-based implementaiton of (Nengo)ROS nodes. "
+	echo "For mode information, see helperdata/README.md.  Usage:\n"
+    echo "-h|help|?     this help"
+    echo "-i            Initialize - copies templateProject into the nengoros directory"
+    echo "-r            Rebuild - rebuilds the nengoros project tree (refreshes potentially newly added dependencies) \n"
+}
+
+
+##################################################### Parse command line
+
+BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # we are here
+
+I=0             # Init project
+R=0             # Rebuild Nengoros
+
+OPTIND=1        # Reset in case getopts has been used previously in the shell.
+while getopts "irh?help:" opt; do
+    case "$opt" in
+    h|\?|help)
+        usage
+        exit 0
+        ;;
+    r)
+        R=1
+        ;;
+    i)
+        I=1
+        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+[ "$1" = "--" ] && shift
+
+##################################################### Do it
+
+echo "$BASE"
+# will rebuild the nengoros project (refreshes potentially newly added dependencies of nengo/simulator-ui)
+if [ $R = "1" ]; then
+	../tool -nf
+fi
+
+# copy new project template into the place
+if [ $I = "1" ]; then
+	cp -r $BASE/projectTemplate $BASE/../
+	echo "\nYour new project is now in the nengoros/projectTemplate folder."
+	echo "For more information how to use it, see demonodes/README.md\n"
+fi
+
+
