@@ -76,7 +76,7 @@ This is not required, but allows you to easily add nodes into the simulation in 
 Basically, you have to:
 
 1. Add image of each node (group of nodes)under: `nengo/simulator-ui/images/nengoIcons`
-2. For each new node (group of nodes), add an initialization script under: `nengo/simulator-ui/python/nef/templates`. You can use a template of the template script contained here, under `projectTemplate/python/myTemplate.py`.
+2. For each new node (group of nodes), add an initialization script under: `nengo/simulator-ui/python/nef/templates`. You can use a template of the template script contained here, under `projectTemplate/python/nef/templates/myTemplate.py`.
 3. Add these new templates into the `nengo/simulator-ui/python/nef/templates/__init__.py` file
 4. Restart Nengo, you should see your nodes in the left panel
 
