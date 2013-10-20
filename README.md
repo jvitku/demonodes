@@ -1,4 +1,4 @@
-Helper Tool for Initializing new Package with Nengo Nodes
+Creating and Using ROS Nodes in the NengoROS System
 ================================================
 
 Author Jaroslav Vitku [vitkujar@fel.cvut.cz]
