@@ -11,8 +11,8 @@ import math
 from ca.nengo.math.impl import FourierFunction
 from ca.nengo.model.impl import FunctionInput
 from ca.nengo.model import Units
-#from nengoros.neurons.impl.test import SecondOne as NeuralModule
-from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule
+#from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule
+from ctu.nengoros.modules.impl import DefaultAsynNeuralModule as NeuralModule
 from ctu.nengoros.comm.nodeFactory import NodeGroup as NodeGroup
 from ctu.nengoros.comm.rosutils import RosUtils as RosUtils
 
@@ -24,7 +24,7 @@ icon='demoSubscriber.png'
 # parameters for initializing the node
 params=[
 ('name','Select name for NeuralModule interfacing the demoSubscriber',str),
-('independent','Can be group pndependent? (pushed into namespace?) select true',bool)
+('independent','Can be group independent? (pushed into namespace?) select true',bool)
 ]
 
 # try to instantiate node with given parameters (e.g. check name..)
@@ -39,7 +39,7 @@ def test_params(net,p):
 def make(net,name='NeuralModule which interfaces demoSubscriber with the Nengo simulator', 
 independent=True, useQuick=True):
 
-    finder = "ctu.hanns.logic.demoSubscriber";
+    finder = "org.hanns.myPackage.DemoSubscriber";
     modemClass = "ctu.nengoros.comm.nodeFactory.modem.impl.DefaultModem";
 
     # create group with a name
@@ -50,8 +50,8 @@ independent=True, useQuick=True):
 
     modem = g.getModem()
     neuron = NeuralModule('Subscriber_'+name, modem) # construct the neural module 
-	#    neuron.createEncoder("hanns/demo/pubsub", "int",1)   # termination = input of neuron (nxint)
-    neuron.createDecoder("hanns/demo/pubsub", "int",1)  # origin = output of neural module 
+    neuron.createEncoder("hanns/demo/pubsub", "int",7)   # termination = input of neuron (nxint)
+    #neuron.createDecoder("hanns/demo/pubsub", "int",1)  # origin = output of neural module 
 
     many=net.add(neuron)                    # add it into the network
 

@@ -64,9 +64,13 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 		version             = '0.0.1-SNAPSHOT'
 		group               = 'ctu.hanns'
 
-4. Recompile the Nengoros project by running:
+3. Recompile and reinstall the Nengoros project by running:
 
 		./tool -nf
+
+4. If you want to launch Nengo from class files, add new dependency to the `simulator-ui/nengo` (and `nengo-cl`) scripts. That is e.g. to the local maven repository:
+
+		NODES=$NODES:$HOME/.m2/repository/org/hanns/projectTemplate/0.0.1-SNAPSHOT/projectTemplate-0.0.1-SNAPSHOT.jar 
 
 #### Launch your Nodes from the Nengo Simulator
 
