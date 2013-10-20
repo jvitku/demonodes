@@ -54,15 +54,15 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 			    compile project(':nengo:simulator')
 			    compile fileTree(dir: 'lib', include: '**/*.jar')
 			    compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
-			    compile 'ctu.hanns.logic:gates:0.0.1-SNAPSHOT'
-				compile 'ctu.hanns.projectTmemplate:0.0.1-SNAPSHOT'
+			    compile 'org.hanns.logic:gates:0.0.1-SNAPSHOT'
+				compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
 			}
 
 	Where the version and name of your project is defined in the `build.gradle` file, see:
 
-		// Define the version and name of my stack (ROS convention)
+		// Define the version and name of my meta-package
 		version             = '0.0.1-SNAPSHOT'
-		group               = 'ctu.hanns'
+		group               = 'org.hanns'
 
 3. Recompile and reinstall the Nengoros project by running:
 
@@ -74,6 +74,17 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 
 #### Launch your Nodes from the Nengo Simulator
 
+From now, you can create simple python script which creates representation of your ROS nodes in the Nengo. Example of simple script, which:
+
+* creates network
+* for each ROS node creates NeuralModule
+* places these new neural modules into the network
+* connect them with other components
+
+An example of how to create the script is contained in `projectTemplate/python/myNetwork.py`. To run this script, simple open the Nengo and into the command-line interface write 'run' with relative path to this script, so e.g.:
+	
+	run ../../projectTemplate/python/myNetwork.py
+	
 
 #### Adding Drag and Drop Icon into the Nengo GUI
 This is not required, but allows you to easily add nodes into the simulation in the GUI. For more information about how to add a GUI template into the Nengo simulator, see the tutorial from the authors of Nengo on: http://nengo.ca/docs/html/advanced/dragndrop.html .
@@ -98,7 +109,7 @@ The second possibility is to launch these nodes as standalone applications, so t
 
 3. Run the auto-generated startup script with the name of node to launch, e.g. on unix system:
 
-		./build/install/projectTemplate/bin/projectTemplate ctu.hanns.logic.gates.impl.AND
+		./build/install/projectTemplate/bin/projectTemplate org.hanns.myPackage.DemoPublisher
 
 Note that you can change some properties of nodes by adding optional command line arguments, for more information, see: http://wiki.ros.org/Remapping%20Arguments
 

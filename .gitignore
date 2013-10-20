@@ -1,0 +1,13 @@
+*.class
+*.pyc
+*.pkc
+*.idx
+.DS_Store
+nengo-*
+nengo-latest.zip
+NengoModels
+
+#### eclipse
+.classpath
+.settings/*
+.metadata/*
