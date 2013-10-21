@@ -1,10 +1,10 @@
 # Create network with two NeuralModules. 
+#
 # First is demoPublisher (sends 7 integers) and the second one is demoSubscriber (receives 7 integers and does nothing).
 #
 # by Jaroslav Vitku [vitkujar@fel.cvut.cz]
 
 import nef
-#from ca.nengo.model import Units
 from ctu.nengoros.comm.nodeFactory import NodeGroup as NodeGroup
 from ctu.nengoros.comm.rosutils import RosUtils as RosUtils
 # Note that modules without outputs (Nengo-decoder) cannot use synchronous mode (DefaultNeuralModule).
@@ -15,7 +15,7 @@ from ctu.nengoros.modules.impl import DefaultNeuralModule as SyncNeuralModule
 
 ################# Create Network and add it to nengo (this must be here first) 
 net=nef.Network('Publisher - Subscriber Simple Demo')
-# delete old (toplevel) network and replace it with the newly CREATED one
+# Delete the old (toplevel) network and replace it with the newly CREATED one
 net.add_to_nengo()  
 
 ################# setup the ROS utils (optional) 
@@ -55,7 +55,7 @@ module2.createEncoder("hanns/demo/pubsub", "int",7)
 many=net.add(module2)                    		
 
 ################# Wire it together
-net.connect(module.getOrigin('hanns/demo/pubsub'),module2.getTermination('hanns/demo/pubsub'))
+net.connect(module.getOrigin('hanns/demo/pubsub'), module2.getTermination('hanns/demo/pubsub'))
 
 print 'Configuration complete.'
 
