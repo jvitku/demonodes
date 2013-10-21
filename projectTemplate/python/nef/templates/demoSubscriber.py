@@ -35,15 +35,10 @@ def test_params(net,p):
 def make(net,name='NeuralModule which interfaces demoSubscriber with the Nengo simulator', independent=True, useQuick=True):
 
     node = "org.hanns.myPackage.DemoSubscriber";
-    modemClass = "ctu.nengoros.comm.nodeFactory.modem.impl.DefaultModem";
-
+    
     g = NodeGroup(name, independent);    			# Create group of nodes (represented as SimpleNode in the GUI)
-    g.addNC(node, "subscriber", "java");  			# start java node and name it subscriber in the ROS network
-    g.addNC(modemClass,"Modem","modem")     		# add modem to the group
-    g.startGroup()
-
-    modem = g.getModem()
-    neuron = NeuralModule('Subscriber_'+name, modem) 	# Construct the neural module (small ROS network: node+modem )
+    g.addNode(node, "subscriber", "java");  	    # start java node and name it subscriber in the ROS network
+    neuron = NeuralModule('Subscriber_'+name, g) 	# Construct the neural module (small ROS network: node+modem )
     neuron.createEncoder("hanns/demo/pubsub", "int", 7) # Define IO: termination = input of neuron (n*int)
 
     many=net.add(neuron)                    		# add it into Nengo simulator

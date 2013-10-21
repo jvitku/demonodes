@@ -1,7 +1,6 @@
 package org.hanns.myPackage;
 
 import java.util.Random;
-
 import org.apache.commons.logging.Log;
 import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
