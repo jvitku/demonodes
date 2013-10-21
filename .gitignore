@@ -3,9 +3,6 @@
 *.pkc
 *.idx
 .DS_Store
-nengo-*
-nengo-latest.zip
-NengoModels
 
 #### eclipse
 .classpath
