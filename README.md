@@ -7,9 +7,11 @@ Author Jaroslav Vitku [vitkujar@fel.cvut.cz]
 About
 ------
 
-This folder contains files for `./helper` tool. It is supposed to automate the initialization of new package for Nengoros nodes.
+This repository contains set of nodes for purposes of demonstration of NengoROS integration. It also contains projectTemplate which can serve as a starting point for creating new (Nengo)ROS nodes in Java.
 
-Usage
+This is a part of NengoRos multi-project build, so there is no need to install any of the demo nodes. 
+
+Obtaining 
 ---------------
 
 	./tool -h
@@ -24,6 +26,7 @@ Building the Project
 
 In order to build your project run from the project root:
 
+	```ruby
 	./gradlew build
 	
 To refresh the eclipse project:
@@ -38,6 +41,7 @@ To install the project into the local maven repository:
 Usage of Newly Created ROS Nodes
 ---------------------------------
 
+
 There are several possibilities how to run your newly created nodes:
 
 ### Integration with NengoROS
@@ -51,6 +55,7 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 		
 2. add the dependency to the `nengo/simulator-ui` project by editing the `nengo/simulator-ui/rosjava.build.gradle`, so the result could be:	
 
+		```ruby
 		dependencies {
 			    compile project(':nengo:simulator')
 			    compile fileTree(dir: 'lib', include: '**/*.jar')
@@ -62,6 +67,7 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 
 	Where the version and name of your project is defined in the `build.gradle` file, see:
 
+		```ruby
 		// Define the version and name of my meta-package
 		version             = '0.0.1-SNAPSHOT'
 		group               = 'org.hanns'	// this is entire.package.name
