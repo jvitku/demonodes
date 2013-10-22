@@ -1,0 +1,117 @@
+#!/bin/sh
+# 
+# author Jaroslav Vitku [vitkujar@fel.cvut.cz]
+#
+# This script helps you to symlink all files needed for GUI representation of nodes into the nengo project.
+# 
+# For more information, see README.md.
+#
+# Args parsing based on: http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
+
+usage()
+{
+
+    echo "\nThis script helps to deploy GUI representation of your nodes into the Nengo application. "
+	echo "For mode information, see README.md. Usage:\n"
+    echo "-p [../relativePathFromHereTo/YourProjectFolder] - this symlinks all GUI data to the Nengo simulator."
+    echo "-f 						 - force overwrite existing links/files. Files to be linked:\n"
+    echo "Drag&Drop GUI images from: 	[YourProjectFolder]/images/nengoIcons/*"
+    echo "Drag&drop scripts from: 	[YourProjectFolder]/python/nef/templates/*"
+    echo "Other scripts from: 		[YourProjectFolder]/python/scripts/*\n"
+}
+
+
+##################################################### Parse command line
+
+BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # we are here
+
+D=0             # Deploy DEMO
+P=0				# Deploy PROJECT
+F=0				# force overwrite existing links/files??
+
+OPTIND=1        # Reset in case getopts has been used previously in the shell.
+while getopts "fpdh?help:" opt; do
+    case "$opt" in
+    h|\?|help)
+        usage
+        exit 0
+        ;;
+    d)
+        D=1
+        ;;
+	p)
+	    P=1
+	    ;;
+	f)
+    	F=1
+    	;;
+    esac
+done
+
+shift $((OPTIND-1))
+[ "$1" = "--" ] && shift
+
+##################################################### Do it
+
+TEMP="python/nef/templates"
+ICONS="images/nengoIcons"
+SCR="python/scripts"
+SIM="nengo/simulator-ui"
+
+
+
+# force rewrite files?
+if [ $F = "1" ]; then
+	FLAG="-sF"
+else
+	FLAG="-si"
+fi
+
+
+
+# deploy demo project?
+if [ $P = "1" ] || [ $D = "1" ]; then
+	
+	# if no. of args is not 1 or the first arg is not folder, exit
+	if [ "$#" -ne 1 ] || ! [ -d "$BASE/$1" ]; then
+		usage
+		exit 0
+	fi
+	PROJ=$(basename "$1")	# get name of the project
+	#echo $(basename $(dirname "$1"))
+	
+	# GUI icons
+	if [ -d "$BASE/$1/$ICONS" ]; then
+		echo "\n** Symlinking icons from: $BASE/$1/$ICONS to $SIM/$ICONS\n"
+		ln $FLAG $BASE/$1/$ICONS/* ../$SIM/$ICONS
+	else
+		echo "\n** The directory: $BASE/$1/$ICONS does not exist, SKIPPING!\n"
+	fi
+	
+	# nengo GUI templates 
+	if [ -d "$BASE/$1/$TEMP" ]; then
+		echo "\n** Symlinking GUI templates from: $BASE/$1/$TEMP to $SIM/$TEMP\n"
+		ln $FLAG $BASE/$1/$TEMP/* ../$SIM/$TEMP
+	else
+		echo "\n** The directory: $BASE/$1/$TEMP does not exist, SKIPPING!\n"
+	fi
+	
+	# general scripts
+	# deploy demo project or normal one?
+	if [ -d "$BASE/$1/$SCR" ]; then
+		if [ $D = "1" ]; then 
+			echo "\n** Symlinking scripts from: $BASE/$1/$SCR/ to $SIM/nr-demo\n"
+			ln $FLAG $BASE/$1/$SCR/* ../$SIM/nr-demo
+		else	
+			echo "\n** Symlinking scripts from: $BASE/$1/$SCR/ to $SIM/scripts/$PROJ/\n"
+			mkdir -p ../nengo/simulator-ui/scripts/$PROJ
+			ln $FLAG $BASE/$1/$SCR/* ../$SIM/scripts/$PROJ
+		fi
+	else
+		echo "\n** The directory: $BASE/$1/$SCR/ does not exist, SKIPPING!\n"
+	fi
+	echo "\nAll done\n"
+else
+	usage
+fi
+

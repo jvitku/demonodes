@@ -11,24 +11,37 @@ This repository contains set of nodes for purposes of demonstration of NengoROS 
 
 This is a part of NengoRos multi-project build, so there is no need to install any of the demo nodes. 
 
-Obtaining 
----------------
 
-	./tool -h
+Running the NengoROS Demos
+---------------------------
+
+In the complete installation of Nengoros, all demo scripts from this repository are symlinked into the folder `nengo/simulator-ui/nr-demo`. To run these nodes, run `Nengo` (or `nengo-cl`):
+	
+	cd nengo/simulator-ui/
+	./nengo
+
+and open the demo script by writing the command into the Nengo console:
+	
+	run nr-demo/minmaxint.py
 
 
-Tool is able to initialize the project for you, after doing this, rename the newly created folder projectTemplate to the name you choose. 
+Template for Creating New Project with ROS Nodes
+-----------------------------------------------
 
-You can now continue editing files under `src/main/java`, `src/test/java` ..
+The script `helper` is able to initialize new Nengoros project for you. Running the script: 
+
+	./demonodes/helper -i
+	
+will copy the `proejctTemplate` into the `nengo/` workspace. Feel free to rename it. You can now edit the example ROS nodes under `src/main/java`.
 
 Building the Project
 ----------------------
 
-In order to build your project run from the project root:
+In order to build your project run from the root of your project:
 
 	./gradlew build
 	
-To refresh the eclipse project:
+To refresh (e.g. after renaming the folder) the eclipse project:
 
 	./gradlew eclipse
 	
@@ -44,33 +57,33 @@ Usage of Newly Created ROS Nodes
 There are several possibilities how to run your newly created nodes:
 
 ### Integration with NengoROS
-In order to use this collection of nodes in Nengoros, you have to add dependency of Nengo sub-project on your project, to do this you have to:
+In order to use this collection of nodes in Nengoros, you have to add a dependency of `nengo/simulator-ui` sub-project on your project. To do this, you have to:
 #### Add your project to the multi-project Nenoros build
 1. Edit the `nengo/settings.gradle` file and add the name of your new project there. So the result could be:
 
-		// include '[folderName]:[subFolderName]:projectName=folderName'  (no package names here)
+		// howto: '[folderName]:[subFolderName]:projectName=folderName'  (no package names here)
 		include 'logic:gates', 'projectTemplate'
 
 		
 2. add the dependency to the `nengo/simulator-ui` project by editing the `nengo/simulator-ui/rosjava.build.gradle`, so the result could be:	
 
 
-	```ruby
-	dependencies {
-		    compile project(':nengo:simulator')
-		    compile fileTree(dir: 'lib', include: '**/*.jar')
-		    compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
-		    compile 'org.hanns.logic:gates:0.0.1-SNAPSHOT'
-			// howto: 'entire.package.name:projectName:version' (no folder names here)
-			compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
+		dependencies {
+		    	compile project(':nengo:simulator')
+		    	compile fileTree(dir: 'lib', include: '**/*.jar')
+		    	compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
+		    	compile 'org.hanns.logic:gates:0.0.1-SNAPSHOT'
+				//
+				// howto: 'entire.package.name:projectName:version' (no folder names here)
+				compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
 		}
-	```
-	Where the version and name of your project is defined in the `build.gradle` file, see:
+
+	Where the version and name of your project is defined in the `projectTemplate/build.gradle` file, see:
 
 
 		// Define the version and name of my meta-package
 		version             = '0.0.1-SNAPSHOT'
-		group               = 'org.hanns'	// this is entire.package.name
+		group               = 'org.hanns'			// this is entire.package.name
 
 3. Recompile and reinstall the Nengoros project by running:
 
@@ -89,9 +102,14 @@ From now, you can create simple python script which creates representation of yo
 * places these new neural modules into the network
 * connect them with other components
 
-An example of how to create the script is contained in `projectTemplate/python/myNetwork.py`. To run this script, simply run the `./nengo` script write into the command-line interface: `run` with relative path to your script, so e.g.:
+An example of how to create the script is contained in `projectTemplate/python/myNetwork.py`. It is good to symlink this script into the `scripts` folder:
+
+	cd nengo/simulator-ui/scripts
+	ln -s ../../../projectTemplate/python/myNetwork.py
+
+Then, to run the script, simply run the `./nengo` and then write into the command-line interface: `run` with relative path to your script, so e.g.:
 	
-	run ../../projectTemplate/python/myNetwork.py
+	run scripts/myNetwork.py
 	
 
 #### Adding Drag and Drop Icon into the Nengo GUI
