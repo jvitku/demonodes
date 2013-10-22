@@ -8,7 +8,6 @@ import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Publisher;
 import org.ros.node.topic.Subscriber;
 
-
 /**
  * Get vector of 4 floats, select min and max and publish them.
  * 
@@ -17,14 +16,14 @@ import org.ros.node.topic.Subscriber;
  */
 public class MinMaxFloat extends AbstractNodeMain {
 
-	private final java.lang.String ann2ros = "ann2rosFloatArr";
-	protected final java.lang.String ros2ann = "ros2annFloatArr";
+	private final java.lang.String ann2ros = "rosinput";
+	protected final java.lang.String ros2ann = "rosoutput";
 
 	private float min;
 	private float max;
 	
 	@Override
-	public GraphName getDefaultNodeName() { return GraphName.of("FloatArrPubSub"); }
+	public GraphName getDefaultNodeName() { return GraphName.of("MinMaxFloat"); }
 
 	@Override
 	public void onStart(final ConnectedNode connectedNode) {
@@ -82,5 +81,4 @@ public class MinMaxFloat extends AbstractNodeMain {
 				min=vals[i];
 		return min;	
 	}
-	
 }
