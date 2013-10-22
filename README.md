@@ -55,7 +55,7 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 2. add the dependency to the `nengo/simulator-ui` project by editing the `nengo/simulator-ui/rosjava.build.gradle`, so the result could be:	
 
 
-	```python
+	```ruby
 	dependencies {
 		    compile project(':nengo:simulator')
 		    compile fileTree(dir: 'lib', include: '**/*.jar')
