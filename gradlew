@@ -2,14 +2,14 @@
 
 ##############################################################################
 ##
-##  projectTemplate start up script for UN*X
+##  Gradle start up script for UN*X
 ##
 ##############################################################################
 
-# Add default JVM options here. You can also use JAVA_OPTS and PROJECT_TEMPLATE_OPTS to pass JVM options to this script.
+# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS=""
 
-APP_NAME="projectTemplate"
+APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
 # Use the maximum available, or set MAX_FD != -1 to use that value.
@@ -61,11 +61,11 @@ while [ -h "$PRG" ] ; do
     fi
 done
 SAVED="`pwd`"
-cd "`dirname \"$PRG\"`/.." >&-
+cd "`dirname \"$PRG\"`/" >&-
 APP_HOME="`pwd -P`"
 cd "$SAVED" >&-
 
-CLASSPATH=$APP_HOME/lib/projectTemplate-0.0.1-SNAPSHOT.jar:$APP_HOME/lib/rosjava-0.0.0-SNAPSHOT.jar:$APP_HOME/lib/junit-3.8.2.jar:$APP_HOME/lib/xml-apis-1.0.b2.jar:$APP_HOME/lib/ws-commons-util-1.0.1.jar:$APP_HOME/lib/com.springsource.org.apache.commons.logging-1.1.1.jar:$APP_HOME/lib/com.springsource.org.apache.commons.codec-1.3.0.jar:$APP_HOME/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar:$APP_HOME/lib/apache_xmlrpc_common-0.0.0-SNAPSHOT.jar:$APP_HOME/lib/commons-pool-1.6.jar:$APP_HOME/lib/jsr305-1.3.9.jar:$APP_HOME/lib/guava-12.0.jar:$APP_HOME/lib/com.springsource.org.apache.commons.lang-2.4.0.jar:$APP_HOME/lib/com.springsource.org.apache.commons.io-1.4.0.jar:$APP_HOME/lib/netty-3.5.2.Final.jar:$APP_HOME/lib/rosjava_bootstrap-0.0.0-SNAPSHOT.jar:$APP_HOME/lib/com.springsource.org.apache.commons.net-2.0.0.jar:$APP_HOME/lib/apache_xmlrpc_server-0.0.0-SNAPSHOT.jar:$APP_HOME/lib/rosjava_messages-0.0.0-SNAPSHOT.jar:$APP_HOME/lib/apache_xmlrpc_client-0.0.0-SNAPSHOT.jar:$APP_HOME/lib/dnsjava-2.1.1.jar
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
@@ -154,11 +154,11 @@ if $cygwin ; then
     esac
 fi
 
-# Split up the JVM_OPTS And PROJECT_TEMPLATE_OPTS values into an array, following the shell quoting and substitution rules
+# Split up the JVM_OPTS And GRADLE_OPTS values into an array, following the shell quoting and substitution rules
 function splitJvmOpts() {
     JVM_OPTS=("$@")
 }
-eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $PROJECT_TEMPLATE_OPTS
+eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
+JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
 
-
-exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.ros.RosRun "$@"
+exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

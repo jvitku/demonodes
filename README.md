@@ -45,9 +45,10 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 #### Add your project to the multi-project Nenoros build
 1. Edit the `nengo/settings.gradle` file and add the name of your new project there. So the result could be:
 
-		// complete version adds these sub-projects:
+		// include '[folderName]:[subFolderName]:projectName=folderName'  (no package names here)
 		include 'logic:gates', 'projectTemplate'
-	
+
+		
 2. add the dependency to the `nengo/simulator-ui` project by editing the `nengo/simulator-ui/rosjava.build.gradle`, so the result could be:	
 
 		dependencies {
@@ -55,6 +56,7 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 			    compile fileTree(dir: 'lib', include: '**/*.jar')
 			    compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
 			    compile 'org.hanns.logic:gates:0.0.1-SNAPSHOT'
+				// howto: 'entire.package.name:projectName:version' (no folder names here)
 				compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
 			}
 
@@ -62,7 +64,7 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 
 		// Define the version and name of my meta-package
 		version             = '0.0.1-SNAPSHOT'
-		group               = 'org.hanns'
+		group               = 'org.hanns'	// this is entire.package.name
 
 3. Recompile and reinstall the Nengoros project by running:
 
@@ -81,7 +83,7 @@ From now, you can create simple python script which creates representation of yo
 * places these new neural modules into the network
 * connect them with other components
 
-An example of how to create the script is contained in `projectTemplate/python/myNetwork.py`. To run this script, simple open the Nengo and into the command-line interface write 'run' with relative path to this script, so e.g.:
+An example of how to create the script is contained in `projectTemplate/python/myNetwork.py`. To run this script, simply run the `./nengo` script write into the command-line interface: `run` with relative path to your script, so e.g.:
 	
 	run ../../projectTemplate/python/myNetwork.py
 	
@@ -91,7 +93,7 @@ This is not required, but allows you to easily add nodes into the simulation in 
 Basically, you have to:
 
 1. Add image of each node (group of nodes)under: `nengo/simulator-ui/images/nengoIcons`
-2. For each new node (group of nodes), add an initialization script under: `nengo/simulator-ui/python/nef/templates`. You can use a template of the template script contained here, under `projectTemplate/python/nef/templates/myTemplate.py`.
+2. For each new node (group of nodes), add an initialization script under: `nengo/simulator-ui/python/nef/templates`. You can use an example template contained here, under `projectTemplate/python/nef/templates/myTemplate.py`.
 3. Add these new templates into the `nengo/simulator-ui/python/nef/templates/__init__.py` file
 4. Restart Nengo, you should see your nodes in the left panel
 
@@ -118,7 +120,3 @@ TODO
 ---------
 
 * 	The tool should generate also files for ROS meta-package (for catkin support (package.xml et al)).
-
-*	Each package containing Nengoros nodes should contain also their GUI representation (their python templates now stored in `nengo/simulator-ui/python/nef/templates` and list of their names). Nengo should be able to read them and add their names into `templates/__init__.py` file. Now, these files are contained in the original folder.
-
-
