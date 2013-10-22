@@ -26,7 +26,6 @@ Building the Project
 
 In order to build your project run from the project root:
 
-	```ruby
 	./gradlew build
 	
 To refresh the eclipse project:
@@ -55,7 +54,8 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 		
 2. add the dependency to the `nengo/simulator-ui` project by editing the `nengo/simulator-ui/rosjava.build.gradle`, so the result could be:	
 
-		```ruby
+
+```python
 		dependencies {
 			    compile project(':nengo:simulator')
 			    compile fileTree(dir: 'lib', include: '**/*.jar')
@@ -64,10 +64,10 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 				// howto: 'entire.package.name:projectName:version' (no folder names here)
 				compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
 			}
-
+```
 	Where the version and name of your project is defined in the `build.gradle` file, see:
 
-		```ruby
+
 		// Define the version and name of my meta-package
 		version             = '0.0.1-SNAPSHOT'
 		group               = 'org.hanns'	// this is entire.package.name
