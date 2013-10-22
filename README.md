@@ -55,16 +55,16 @@ In order to use this collection of nodes in Nengoros, you have to add dependency
 2. add the dependency to the `nengo/simulator-ui` project by editing the `nengo/simulator-ui/rosjava.build.gradle`, so the result could be:	
 
 
-```python
-		dependencies {
-			    compile project(':nengo:simulator')
-			    compile fileTree(dir: 'lib', include: '**/*.jar')
-			    compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
-			    compile 'org.hanns.logic:gates:0.0.1-SNAPSHOT'
-				// howto: 'entire.package.name:projectName:version' (no folder names here)
-				compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
-			}
-```
+	```python
+	dependencies {
+		    compile project(':nengo:simulator')
+		    compile fileTree(dir: 'lib', include: '**/*.jar')
+		    compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
+		    compile 'org.hanns.logic:gates:0.0.1-SNAPSHOT'
+			// howto: 'entire.package.name:projectName:version' (no folder names here)
+			compile 'org.hanns.projectTmemplate:0.0.1-SNAPSHOT'
+		}
+	```
 	Where the version and name of your project is defined in the `build.gradle` file, see:
 
 
