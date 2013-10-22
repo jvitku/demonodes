@@ -10,8 +10,7 @@ import org.ros.node.topic.Subscriber;
 
 
 /**
- * Receive vector of 4 floats, get min and max value, convert to Integer
- * and return these two.
+ * Receive vector of 4 floats, get min and max value, convert to Integer and return these two.
  * 
  * Will ROS recogniye namespace of topic?
  * 

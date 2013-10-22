@@ -34,7 +34,7 @@ def test_params(net,p):
 
 def make(net,name='NeuralModule which interfaces demoSubscriber with the Nengo simulator', independent=True, useQuick=True):
 
-    node = "org.hanns.myPackage.DemoSubscriber";
+    node = "org.hanns.demoNodes.DemoSubscriber";
     
     g = NodeGroup(name, independent);    			# Create group of nodes (represented as SimpleNode in the GUI)
     g.addNode(node, "subscriber", "java");  	    # start java node and name it subscriber in the ROS network

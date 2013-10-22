@@ -35,7 +35,7 @@ def test_params(net,p):
 
 def make(net,name='NeuralModule which interfaces demoPublisher with the Nengo simulator', independent=True, useQuick=True):
 
-    finder = "org.hanns.myPackage.DemoPublisher";
+    finder = "org.hanns.demoNodes.DemoPublisher";
 
     # create group with a name
     g = NodeGroup(name, independent);    				# Create group of nodes (represented as SimpleNode in the GUI)

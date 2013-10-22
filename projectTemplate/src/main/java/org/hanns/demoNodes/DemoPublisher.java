@@ -1,4 +1,4 @@
-package org.hanns.myPackage;
+package org.hanns.demoNodes;
 
 import java.util.Random;
 import org.apache.commons.logging.Log;

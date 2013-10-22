@@ -1,4 +1,4 @@
-package org.hanns.myPackage;
+package org.hanns.demoNodes;
 
 import org.apache.commons.logging.Log;
 import org.ros.message.MessageListener;

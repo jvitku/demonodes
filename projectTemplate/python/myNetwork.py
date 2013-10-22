@@ -12,7 +12,6 @@ from ctu.nengoros.modules.impl import DefaultAsynNeuralModule as AsyncNeuralModu
 # The simulator waits each simulation step for the output in the synchronous mode, this case:
 from ctu.nengoros.modules.impl import DefaultNeuralModule as SyncNeuralModule
 
-
 ################# Create Network and add it to nengo (this must be here first) 
 net=nef.Network('Publisher - Subscriber Simple Demo')
 # Delete the old (toplevel) network and replace it with the newly CREATED one
@@ -23,7 +22,7 @@ net.add_to_nengo()
 #RosUtils.prefferJroscore(True)  # preffer jroscore before the roscore? 
 
 ################# Create Neural Module which contains the publisher ROS node
-publisher = "org.hanns.myPackage.DemoPublisher";# Java (ROS) node that does this job
+publisher = "org.hanns.demoNodes.DemoPublisher";# Java (ROS) node that does this job
 
 # Create group of nodes
 # This group is represented in Nengo as one SimpleNode, can contain one or entire network of ROS nodes.
@@ -35,9 +34,8 @@ module = SyncNeuralModule('Publisher', g) 	    # construct the Neural Module
 module.createDecoder("hanns/demo/pubsub", "int",7) # define the data link
 many=net.add(module)                    		# add it into the network
 
-
 ################# Create Neural Module which contains the publisher ROS node
-subscriber = "org.hanns.myPackage.DemoSubscriber";
+subscriber = "org.hanns.demoNodes.DemoSubscriber";
 
 g2 = NodeGroup("Subscribing", True);        	
 g2.addNode(publisher, "Subscriber", "java");    	
