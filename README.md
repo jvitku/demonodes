@@ -61,7 +61,7 @@ In order to use this collection of nodes in Nengoros, you have to add a dependen
 #### Add your project to the multi-project Nenoros build
 1. Edit the `nengo/settings.gradle` file and add the name of your new project there. So the result could be:
 
-		// howto: '[folderName]:[subFolderName]:projectName=folderName'  (no package names here)
+		// howto: '[folderName]:[subFolderName]:[projectName==folderName]'  (no package names here)
 		include 'logic:gates', 'projectTemplate'
 
 		

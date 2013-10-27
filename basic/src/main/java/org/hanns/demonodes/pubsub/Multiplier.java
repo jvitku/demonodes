@@ -45,10 +45,10 @@ public class Multiplier extends AbstractNodeMain{
 				log.info("received these data: "+toAr(data));
 				float result = 1, tmp=0;
 				for(int i=0; i<data.length; i++){
-					System.out.println("dataaaaaaaa : "+result+" "+data[i]);
+					System.out.println("dataaaaaaaa : "+result+" times "+data[i]);
 					tmp = result*data[i];
 					result = tmp;
-					System.out.println("dataaaaaaaa .......");
+					System.out.println("equals to......."+result);
 				}
 				log.info("publishing the multiplied result: "+result);
 				

@@ -3,7 +3,7 @@
 /*
 //thi sis handled in the super-project nengoros
 task wrapper(type: Wrapper) {
-	gradleVersion      = '1.7'
+gradleVersion      = '1.7'
 }
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
@@ -21,13 +21,15 @@ mainClassName = 'org.ros.RosRun'
 
 // This configures the project to search for Maven libraries (rosjava: bootstrap.. and their dependencies)
 repositories {
-	mavenCentral()
-	mavenLocal()
+    mavenLocal()
 
-	maven {
-		url 'http://robotbrains.hideho.org/nexus/content/groups/ros-public'
-		//		url 'http://repo1.maven.org/maven2/'
-	}
+    mavenCentral()
+
+    maven {
+        url 'http://robotbrains.hideho.org/nexus/content/groups/ros-public'
+        //		url 'http://repo1.maven.org/maven2/'
+    }
+
 }
 
 // Define the version and name of my stack (ROS convention)
@@ -36,7 +38,8 @@ group               = 'org.hanns.demonodes'
 
 // This project depends on compilation of rosjava_core
 dependencies {
-	compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
-	testCompile 'junit:junit:4.10'
+    compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
+    testCompile 'junit:junit:4.10'
+    testCompile 'ctu.nengoros:jroscore:0.0.1-SNAPSHOT'
 }
 
