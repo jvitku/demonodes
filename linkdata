@@ -15,10 +15,13 @@ usage()
     echo "For mode information, see README.md. Usage:\n"
     echo "-d [../relativePathFromHereTo/YourProjectFolder] - this symlinks all GUI data to the Nengo simulator."
     echo "-f 						 - force overwrite existing links/files. Files to be linked:\n"
+    echo "RosNode helper scripts from:		[YourProjectFolder]/python/rosnodes/*\n"
     echo "Drag&Drop GUI images from: 	[YourProjectFolder]/images/nengoIcons/*"
     echo "Drag&drop scripts from: 	[YourProjectFolder]/python/nef/templates/*"
     echo "Other scripts from: 		[YourProjectFolder]/python/scripts/*"
-    echo "Nengoros demo scripts from: [YourProjectFolder]/python/nr-demo/*\n"
+    echo "Nengoros demo scripts from:	[YourProjectFolder]/python/nr-demo/*\n"
+	echo "Note that if you linked some new data into the GUI, you have to manually import them"
+	echo "in the file named: nengoros/nengo/simulator-ui/python/nef/templates/_init__.py\n"
 }
 
 
@@ -55,7 +58,7 @@ ICONS="images/nengoIcons"
 SCR="python/scripts"
 DEMO="python/nr-demo"
 SIM="nengo/simulator-ui"
-
+RN="python/rosnodes"
 
 
 # force rewrite files?
@@ -77,6 +80,20 @@ if [ $D = "1" ]; then
     fi
     PROJ=$(basename "$1")	# get name of the project
     #echo $(basename $(dirname "$1"))
+
+
+    # ros nodes
+    if [ -d "$BASE/$1/$RN" ]; then
+        if [ "$(ls $BASE/$1/$RN)" == "" ]; then
+            echo "\n** The directory: $BASE/$1/$RN/ does not contain any files, SKIPPING!\n"
+        else
+            echo "\n** Symlinking scripts from: $BASE/$1/$RN/ to $SIM/$RN\n"
+            mkdir -p ../nengo/simulator-ui/$RN
+            ln $FLAG $BASE/$1/$RN/* ../$SIM/$RN
+        fi
+    else
+        echo "\n** The directory: $BASE/$1/$RN/ does not exist, SKIPPING!\n"
+    fi
 
     # GUI icons
     if [ -d "$BASE/$1/$ICONS" ]; then
