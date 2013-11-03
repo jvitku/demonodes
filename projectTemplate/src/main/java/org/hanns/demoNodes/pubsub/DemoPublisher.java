@@ -1,4 +1,4 @@
-package org.hanns.demoNodes;
+package org.hanns.demonodes.pubsub;
 
 import java.util.Random;
 import org.apache.commons.logging.Log;
@@ -16,11 +16,13 @@ import org.ros.node.topic.Publisher;
  */
 public class DemoPublisher extends AbstractNodeMain {
 
-	protected final java.lang.String topic = "hanns/demo/pubsub";
+	protected final java.lang.String topicOut = "org/hanns/demonodes/pubsub";
 	// length of the message is used by the demoPublisher.py script 
 	private final int dataLength = 7;
 	private final Random r = new Random();
-
+	
+	Publisher<std_msgs.Float32MultiArray> publisher;
+	
 
 	/**
 	 * Default name of the ROS node
@@ -39,14 +41,13 @@ public class DemoPublisher extends AbstractNodeMain {
 		final Log log = connectedNode.getLog();
 
 		// define the publisher
-		final Publisher<std_msgs.Int32MultiArray> publisher = 
-				connectedNode.newPublisher(topic, std_msgs.Int32MultiArray._TYPE);
+		publisher = connectedNode.newPublisher(topicOut, std_msgs.Float32MultiArray._TYPE);
 		
 		log.info("HEY! Node ready now! Starting sending mesages..");
 		
 		// ROS uses these cancellable loops
 		connectedNode.executeCancellableLoop(new CancellableLoop() {
-		      private float poc;
+		      private int poc;
 
 		      @Override
 		      protected void setup() {
@@ -55,21 +56,22 @@ public class DemoPublisher extends AbstractNodeMain {
 		      
 		      @Override
 		      protected void loop() throws InterruptedException {
-		        std_msgs.Int32MultiArray mess = publisher.newMessage();	// init message
+		        std_msgs.Float32MultiArray mess = publisher.newMessage();	// init message
 		        
-		        int[] data = generateData();
+		        float[] data = generateData();
 		        
 		        mess.setData(data);									// set message data
 		        publisher.publish(mess);							// send message
 		        log.info("Sending message no.:"+poc+", and sending these vals "+toAr(data));
-		        poc=poc++;
+		        System.out.println("Sending message no.:"+poc+", wit these data:"+toAr(data));
+		        poc++;
 		        Thread.sleep(100);
 		      }
 		    });
 	}
 
-	private int[] generateData(){
-		int[] out = new int[this.dataLength];
+	private float[] generateData(){
+		float[] out = new float[this.dataLength];
 		
 		for(int i=0;i<out.length; i++)
 			out[i] = r.nextInt();
@@ -77,7 +79,7 @@ public class DemoPublisher extends AbstractNodeMain {
 		return out;
 	}
 	
-	protected String toAr(int[] data){
+	protected String toAr(float[] data){
 		String out = "";
 		for(int i=0;i<data.length; i++)
 			out = out+"  "+data[i];

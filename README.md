@@ -56,10 +56,33 @@ Usage of Newly Created ROS Nodes
 
 There are several possibilities how to run your newly created nodes:
 
+### Running the nodes independently
+Each ROSjava node produced in this way is 100% compatible with ROS infrastructure and can be launched either under [roscore](http://wiki.ros.org/roscore) from ROS installation or [jroscore](https://github.com/jvitku/jroscore) from the nengoros project. To launch the node it is necessary to:
+
+Create the runnable application by launching from the project root:
+
+	./gradlew installApp
+
+Run the core, e.g. for jroscore:
+
+	cd nengoros/jroscore && ./jroscore
+
+Launch the generated script with the full node name in a new terminal:
+
+	cd nengoros/projectTemplate
+	./build/install/projectTemplate/bin/projectTemplate org.hanns.demonodes.pubsub.DemoPublisher
+	
+Launch subscriber to receive messages in a new terminal:
+
+	cd nengoros/projectTemplate
+	./build/install/projectTemplate/bin/projectTemplate org.hanns.demonodes.pubsub.DemoSubscriber
+
+Now, there should be two independently running ROSjava nodes which communicate over the TCP/IP vie the ROS network. 
+
 ### Integration with NengoROS
 In order to use this collection of nodes in Nengoros, you have to add a dependency of `nengo/simulator-ui` sub-project on your project. To do this, you have to:
 #### Add your project to the multi-project Nenoros build
-1. Edit the `nengo/settings.gradle` file and add the name of your new project there. So the result could be:
+1. Edit the `settings.gradle` file and add the name of your new project there. So the result could be:
 
 		// howto: '[folderName]:[subFolderName]:[projectName==folderName]'  (no package names here)
 		include 'logic:gates', 'projectTemplate'
@@ -78,12 +101,6 @@ In order to use this collection of nodes in Nengoros, you have to add a dependen
 				compile project('projectTemplate')
 		}
 
-	Where the version and name of your project is defined in the `projectTemplate/build.gradle` file, see:
-
-
-		// Define the version and name of my meta-package
-		version             = '0.0.1-SNAPSHOT'
-		group               = 'org.hanns'			// this is entire.package.name
 
 3. Recompile and reinstall the Nengoros project by running:
 
