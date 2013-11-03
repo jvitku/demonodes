@@ -8,3 +8,4 @@
 .classpath
 .settings/*
 .metadata/*
+basic/.settings/org.eclipse.jdt.core.prefs
