@@ -91,7 +91,7 @@ fi
 # force rewrite files without warning??
 if [ $F = "1" ]; then
 	if [ $C = "1" ]; then
-		FLAG="-f"	# man cp
+		FLAG="-f" #--remove-destination -this is different on OS X and Linux..
 	else
     	FLAG="-sF"
 	fi
