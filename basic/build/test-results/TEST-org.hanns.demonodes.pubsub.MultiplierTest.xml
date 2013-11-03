@@ -1,8 +1,0 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="org.hanns.demonodes.pubsub.MultiplierTest" tests="1" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="localhost" time="1.38263075405E9">
-  <properties/>
-  <testcase name="test" classname="org.hanns.demonodes.pubsub.MultiplierTest" time="0.004"/>
-  <system-out><![CDATA[hi, this test will pass!
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

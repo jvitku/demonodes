@@ -42,8 +42,8 @@ def make(net,name='NeuralModule which interfaces demoSubscriber with the Nengo s
     
     g = NodeGroup(name, independent);    			# Create group of nodes (represented as SimpleNode in the GUI)
     g.addNode(node, "subscriber", "java");  	    # start java node and name it subscriber in the ROS network
-    neuron = NeuralModule('Subscriber_'+name, g) 	# Construct the neural module (small ROS network: node+modem )
-    neuron.createEncoder("hanns/demonodes/pubsub", "int", 7) # Define IO: termination = input of neuron (n*int)
+    module = NeuralModule('Subscriber_'+name, g) 	# Construct the neural module (small ROS network: node+modem )
+    module.createEncoder("org/hanns/demonodes/pubsub", "float", 7) # Define IO: termination = input of neuron (n*int)
 
-    many=net.add(neuron)                    		# add it into Nengo simulator
+    many=net.add(module)                    		# add it into Nengo simulator
 

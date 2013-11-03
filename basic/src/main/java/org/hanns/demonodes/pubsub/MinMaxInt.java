@@ -16,8 +16,8 @@ import org.ros.node.topic.Subscriber;
  */
 public class MinMaxInt extends AbstractNodeMain {
 
-	private final java.lang.String rosIn = "hanns/demonodes/A";
-	protected final java.lang.String rosOut = "hanns/demonodes/B";
+	private final java.lang.String rosIn = "org/hanns/demonodes/pubsub/IN";
+	protected final java.lang.String rosOut = "org/hanns/demonodes/pubsub/OUT";
 
 	private float min;
 	private float max;
@@ -28,6 +28,7 @@ public class MinMaxInt extends AbstractNodeMain {
 	@Override
 	public void onStart(final ConnectedNode connectedNode) {
 
+		System.out.println("Node started, initializing! XXXXXXXXXXXXXXX");
 		final Log log = connectedNode.getLog();
 
 		// define the publisher

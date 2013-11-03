@@ -16,9 +16,8 @@ import org.ros.node.topic.Subscriber;
  */
 public class Multiplier extends AbstractNodeMain{
 	
-	private final java.lang.String topicIn = "hanns/demonodes/A";
-	protected final java.lang.String topicOut = "hanns/demonodes/C";
-
+	private final java.lang.String topicIn = "org/hanns/demonodes/pubsub/IN";
+	protected final java.lang.String topicOut = "org/hanns/demonodes/pubsub/OUT";
 	
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of("Multiplier"); }
@@ -45,10 +44,8 @@ public class Multiplier extends AbstractNodeMain{
 				log.info("received these data: "+toAr(data));
 				float result = 1, tmp=0;
 				for(int i=0; i<data.length; i++){
-					System.out.println("dataaaaaaaa : "+result+" times "+data[i]);
 					tmp = result*data[i];
 					result = tmp;
-					System.out.println("equals to......."+result);
 				}
 				log.info("publishing the multiplied result: "+result);
 				

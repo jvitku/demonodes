@@ -1,55 +1,56 @@
-# Create two neural modules, demoPublisher and demoSubscriber and connect them by means of Nengo simulator.
+# Create two neural modules, demoPublisher and demoSubscriber and connect them by means of ROS network.
 #
-# starts: 
-#   -ROS-java nodes demoPublisher and demoSubscriber, both represented as separate NeuralModules
-#   -wires them in the Nengo simulator
+# Compared to pubsub_independent.py, this demo shows how to ROS nodes can be connected in the Nengo simulator.
+# Each of Neural Modules has own modem and ROS node, both can be pushed into one namespace, so the ROS communication
+# will not interfere with other nodes (here DemoPublisher with DemoSubscriber using the same topic). This is 
+# set by the parameter last parameter in: g = NodeGroup("PubSubDemo", True);      // true => independent communication  			
 #
 # by Jaroslav Vitku [vitkujar@fel.cvut.cz]
+#
 
 import nef
 from ca.nengo.math.impl import FourierFunction
 from ca.nengo.model.impl import FunctionInput
 from ca.nengo.model import Units
-#from ctu.nengoros.modules.impl import DefaultAsynNeuralModule as NeuralModule
-from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule
+#from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule
+from ctu.nengoros.modules.impl import DefaultAsynNeuralModule as AsynNeuralModule
 from ctu.nengoros.comm.nodeFactory import NodeGroup as NodeGroup
 from ctu.nengoros.comm.rosutils import RosUtils as RosUtils
 
-# creates nef network and adds it to nengo (this must be first in the script) 
-net=nef.Network('Neural module - find min and max and publishes')
-net.add_to_nengo()  # here: delete old (toplevel) network and replace it with the newly CREATED one
+pub = "org.hanns.demonodes.pubsub.DemoPublisher"
+sub = "org.hanns.demonodes.pubsub.DemoSubscriber"
 
 ################# setup the ROS utils (optional) 
 #RosUtils.setAutorun(False)     # Do we want to autorun roscore and rxgraph? (tru by default)
-#RosUtils.prefferJroscore(True)  # preffer jroscore before the roscore? 
+#RosUtils.prefferJroscore(True)  # preffer jroscore before the roscore
 
-################# Define the Group of nodes
-finder = "org.hanns.demoNodes.pubsub.MinMaxFloat";	# Java (ROS) node that does this job
-g = NodeGroup("MinMaxFloat", True);        			# create independent (True) group called..
-g.addNode(finder, "Finder", "java");        		# start java node and name it finder
+# creates nef network and adds it to nengo (this must be first in the script) 
+net=nef.Network('Two Neural modules containing ROS nodes with communication shielded from each other')
+net.add_to_nengo()  # here: delete old (toplevel) network and replace it with the newly CREATED one
+					# any poteintial running ROS nodes are sopped here
 
-################# Setup the Neural Module and add it to the Nengo network
-neuron = NeuralModule('MinMaxFinderFloat', g)    	# construct the Neural Module
-# add encoder to the module (input)
-# It is output on modem which is connected to input (topic name) to the ROS node
-neuron.createEncoder("rosinput", "float", 4)  		# ..called TERMINATION of SimpleNode
-# Add decoder to the module (output):
-# It is input if modem which is connected to output (topic name) of the ROS node
-neuron.createDecoder("rosoutput", "float", 2)    	# ..called ORIGIN of SimpleNode
+################ Run two groups of nodes (conenct them in nengo)
+g = NodeGroup("Publisher", True);        			
+g.addNode(pub, "Publisher", "java");     	# add the publisher node
+module = AsynNeuralModule("Publisher", g)    		
+module.createDecoder("org/hanns/demonodes/pubsub", "float", 7) 
+net.add(module)	
 
-many=net.add(neuron)                        		# add it into the network
+g2 = NodeGroup("Subbscriber", True);        			
+g2.addNode(sub, "Subbscriber", "java");     	# add the publisher node
+module2 = AsynNeuralModule("Subscriber", g2)    		
+module2.createEncoder("org/hanns/demonodes/pubsub", "float", 7)
+net.add(module2)	
 
-#Create a white noise input function with params: baseFreq, maxFreq [rad/s], RMS, seed
-input=FunctionInput('Randomized input', [FourierFunction(.1, 10,1, 12),
-    FourierFunction(.4, 20,1.5, 11),
-    FourierFunction(.1, 10,0.9, 10),
-    FourierFunction(.5, 11,1.6, 17)],Units.UNK) 
+net.connect(module.getOrigin('org/hanns/demonodes/pubsub'),module2.getTermination('org/hanns/demonodes/pubsub'))						
 
-net.add(input) # Add to the network and connect to neuron
-net.connect(input,	neuron.getTermination('rosinput')) 
+print 'Configuration complete - communication between ROS nodes is handled by the Nengo now'
+print 'Note that both nodes are running:'
+print '-Publisher periodically publishes data'
+print '-Subscriber does not receive any data, because Nengo simulation is not running and data are not sent'
+print 'Try to start the simulation'
+print ''
+print 'Note that due to asynchornous communication, the sample rate of Nengo is faster than publishing rate of Publisher'
 
-# create ANN with 100 neurons which approximates it's input
-A=net.make('A',neurons=100,dimensions=2,radius=3)    
-net.connect(neuron.getOrigin('rosoutput'),A)
 
-print 'Configuration complete.'
+

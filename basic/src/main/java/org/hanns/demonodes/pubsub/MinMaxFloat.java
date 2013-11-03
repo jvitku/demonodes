@@ -16,8 +16,8 @@ import org.ros.node.topic.Subscriber;
  */
 public class MinMaxFloat extends AbstractNodeMain {
 
-	private final java.lang.String rosIn = "hanns/demonodes/A";
-	protected final java.lang.String rosOut = "hanns/demonodes/B";
+	private final java.lang.String rosIn = "org/hanns/demonodes/pubsub/IN";
+	protected final java.lang.String rosOut = "org/hanns/demonodes/pubsub/OUT";
 
 	private float min;
 	private float max;

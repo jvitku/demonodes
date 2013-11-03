@@ -16,17 +16,18 @@ import org.ros.node.topic.Subscriber;
 public class DemoSubscriber extends AbstractNodeMain{
 	
 	// topic used for communication 
-	protected final java.lang.String topicIn = "hanns/demonodes/A";
+	protected final java.lang.String topicIn = "org/hanns/demonodes/pubsub";
 	
 	// configured also in python/nef/templates/demoSubscriber.py 
 	private final int dataLength = 7;
+	private int poc = 0;
 	
 	/**
 	 * Default name of the ROS node
 	 */
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of("DemoSubscriber"); }
-
+	
 	/**
 	 * Method called after launching the node. 
 	 * After exiting this method, the node will stop working.
@@ -34,6 +35,8 @@ public class DemoSubscriber extends AbstractNodeMain{
 	@Override
 	public void onStart(final ConnectedNode connectedNode) {
 
+		
+		
 		System.out.println("Node started, initializing!");
 		final Log log = connectedNode.getLog();
 
@@ -48,8 +51,10 @@ public class DemoSubscriber extends AbstractNodeMain{
 				float[] data = message.getData();
 				if(data.length != dataLength)
 					log.error("Received message has unexpected length of"+data.length+"!");
-				else
+				else{
+			        System.out.println("----RECEIVED message no.:"+(poc++)+", wit these data:"+toAr(data));
 					log.info("Received these data: "+toAr(data));
+				}
 			}
 		});
 

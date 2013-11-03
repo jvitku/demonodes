@@ -38,14 +38,14 @@ def test_params(net,p):
 
 def make(net,name='NeuralModule which interfaces demoPublisher with the Nengo simulator', independent=True, useQuick=True):
 
-    finder = "org.hanns.myPackage.DemoPublisher";
+    pub = "org.hanns.demonodes.pubsub.DemoPublisher";
 
     # create group with a name
     g = NodeGroup(name, independent);    				# Create group of nodes (represented as SimpleNode in the GUI)
-    g.addNode(finder, "publisher", "java");  				# start java node and name it subscriber in the ROS network
+    g.addNode(pub, "publisher", "java");  				# start java node and name it subscriber in the ROS network
     
-    neuron = NeuralModule('Subscriber_'+name, g) 	    # Construct the neural module (small ROS network: node+modem )
-    neuron.createDecoder("hanns/demo/pubsub", "int",7)  # Define IO: termination = input of neuron (n*int)
+    module = NeuralModule('Publisher_'+name, g) 	    # Construct the neural module (small ROS network: node+modem )
+    module.createDecoder("org/hanns/demonodes/pubsub", "float",7)  # Define IO: termination = input of neural module (n*int)
 
-    many=net.add(neuron)                    			# add it into Nengo simulator
+    many=net.add(module)                    			# add it into Nengo simulator
 
