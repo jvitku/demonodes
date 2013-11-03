@@ -13,15 +13,18 @@ usage()
 
     echo "\nThis script helps to deploy GUI representation of your nodes into the Nengo application. "
     echo "For mode information, see README.md. Usage:\n"
-    echo "-d [../relativePathFromHereTo/YourProjectFolder] - this symlinks all GUI data to the Nengo simulator."
+    echo "-l [../relativePathFromHereTo/YourProjectFolder] - this symlinks all GUI data to the Nengo simulator."
+	echo "-c [../relativePathFromHereTo/YourProjectFolder] - does the same, but COPIES it instead of linking - for Ubuntu!"
     echo "-f 						 - force overwrite existing links/files. Files to be linked:\n"
     echo "RosNode helper scripts from:		[YourProjectFolder]/python/rosnodes/*\n"
     echo "Drag&Drop GUI images from: 	[YourProjectFolder]/images/nengoIcons/*"
     echo "Drag&drop scripts from: 	[YourProjectFolder]/python/nef/templates/*"
     echo "Other scripts from: 		[YourProjectFolder]/python/scripts/*"
     echo "Nengoros demo scripts from:	[YourProjectFolder]/python/nr-demo/*\n"
-	echo "Note that if you linked some new data into the GUI, you have to manually import them"
-	echo "in the file named: nengoros/nengo/simulator-ui/python/nef/templates/_init__.py\n"
+	echo "Note1: if you linked some new data into the GUI, you have to manually import them"
+	echo " in the file named: nengoros/nengo/simulator-ui/python/nef/templates/_init__.py\n"
+	echo "Note2: Current version of Gradle is unable to follow symlinks on Ubuntu,"
+	echo " in case of using Ubuntu, use the -c flag in order to be able to run \"./gradlew installApp\" in smulator-ui/\n"
 }
 
 
@@ -29,19 +32,23 @@ usage()
 
 BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # we are here
 
-D=0             # Deploy Project
+C=0             # Deploy Project
 F=0				# force overwrite existing links/files??
+L=0
 
 OPTIND=1        # Reset in case getopts has been used previously in the shell.
-while getopts "fpdh?help:" opt; do
+while getopts "flch?help:" opt; do
     case "$opt" in
         h|\?|help)
         usage
         exit 0
         ;;
-        d)
-        D=1
+        l)
+        L=1
         ;;
+		c)
+		C=1
+		;;
         f)
         F=1
         ;;
@@ -61,17 +68,45 @@ SIM="nengo/simulator-ui"
 RN="python/rosnodes"
 
 
-# force rewrite files?
-if [ $F = "1" ]; then
-    FLAG="-sF"
+
+if [ $C = "1" ] && [ $L = "1" ]; then
+	echo "\nERROR: cannot link and copy data at the same time, choose one, usage:"
+	usage
+	exit
+fi
+
+# determine the command
+if [ $C = "1" ]; then
+	echo "COPYING files"
+	COMMAND=cp
+elif [ $L = "1" ]; then
+	echo "LINKING files"
+	COMMAND=ln
 else
-    FLAG="-si"
+	echo "\nERROR: choose one of these flags: -c [copy] -l [link]"
+	usage
+	exit
+fi
+
+# force rewrite files without warning??
+if [ $F = "1" ]; then
+	if [ $C = "1" ]; then
+		FLAG="-f"	# man cp
+	else
+    	FLAG="-sF"
+	fi
+else
+	if [ $C = "1" ]; then
+		FLAG=""		
+	else
+    	FLAG="-si"
+	fi
 fi
 
 
 
 # deploy project data
-if [ $D = "1" ]; then
+if [ $C = "1" ] || [ $L = "1" ]; then
 
     # if no. of args is not 1 or the first arg is not folder, exit
     if [ "$#" -ne 1 ] || ! [ -d "$BASE/$1" ]; then
@@ -87,9 +122,9 @@ if [ $D = "1" ]; then
         if [ "$(ls $BASE/$1/$RN)" == "" ]; then
             echo "\n** The directory: $BASE/$1/$RN/ does not contain any files, SKIPPING!\n"
         else
-            echo "\n** Symlinking scripts from: $BASE/$1/$RN/ to $SIM/$RN\n"
+            echo "\n** Deploying scripts from: $BASE/$1/$RN/ to $SIM/$RN\n"
             mkdir -p ../nengo/simulator-ui/$RN
-            ln $FLAG $BASE/$1/$RN/* ../$SIM/$RN
+            $COMMAND $FLAG $BASE/$1/$RN/* ../$SIM/$RN
         fi
     else
         echo "\n** The directory: $BASE/$1/$RN/ does not exist, SKIPPING!\n"
@@ -100,8 +135,8 @@ if [ $D = "1" ]; then
         if [ "$(ls $BASE/$1/$ICONS)" == "" ]; then
             echo "\n** The directory: $BASE/$1/$ICONS/ does not contain any files, SKIPPING!\n"
         else
-            echo "\n** Symlinking icons from: $BASE/$1/$ICONS to $SIM/$ICONS\n"
-            ln $FLAG $BASE/$1/$ICONS/* ../$SIM/$ICONS
+            echo "\n** Deploying icons from: $BASE/$1/$ICONS to $SIM/$ICONS\n"
+            $COMMAND $FLAG $BASE/$1/$ICONS/* ../$SIM/$ICONS
         fi
     else
         echo "\n** The directory: $BASE/$1/$ICONS does not exist, SKIPPING!\n"
@@ -112,8 +147,8 @@ if [ $D = "1" ]; then
         if [ "$(ls $BASE/$1/$TEMP)" == "" ]; then
             echo "\n** The directory: $BASE/$1/$TEMP/ does not contain any files, SKIPPING!\n"
         else
-            echo "\n** Symlinking GUI templates from: $BASE/$1/$TEMP to $SIM/$TEMP\n"
-            ln $FLAG $BASE/$1/$TEMP/* ../$SIM/$TEMP
+            echo "\n** Deploying GUI templates from: $BASE/$1/$TEMP to $SIM/$TEMP\n"
+            $COMMAND $FLAG $BASE/$1/$TEMP/* ../$SIM/$TEMP
         fi
     else
         echo "\n** The directory: $BASE/$1/$TEMP does not exist, SKIPPING!\n"
@@ -124,9 +159,9 @@ if [ $D = "1" ]; then
         if [ "$(ls $BASE/$1/$DEMO)" == "" ]; then
             echo "\n** The directory: $BASE/$1/$DEMO/ does not contain any files, SKIPPING!\n"
         else
-            echo "\n** Symlinking scripts from: $BASE/$1/$DEMO/ to $SIM/$DEMO/$PROJ/\n"
+            echo "\n** Deploying scripts from: $BASE/$1/$DEMO/ to $SIM/$DEMO/$PROJ/\n"
             mkdir -p ../nengo/simulator-ui/nr-demo/$PROJ
-            ln $FLAG $BASE/$1/$DEMO/* ../$SIM/nr-demo/$PROJ
+            $COMMAND $FLAG $BASE/$1/$DEMO/* ../$SIM/nr-demo/$PROJ
         fi
     else
         echo "\n** The directory: $BASE/$1/$DEMO/ does not exist, SKIPPING!\n"
@@ -137,9 +172,9 @@ if [ $D = "1" ]; then
         if [ "$(ls $BASE/$1/$SCR)" == "" ]; then
             echo "\n** The directory: $BASE/$1/$SCR/ does not contain any files, SKIPPING!\n"
         else
-            echo "\n** Symlinking scripts from: $BASE/$1/$SCR/ to $SIM/scripts/$PROJ/\n"
+            echo "\n** Deploying scripts from: $BASE/$1/$SCR/ to $SIM/scripts/$PROJ/\n"
             mkdir -p ../nengo/simulator-ui/scripts/$PROJ
-            ln $FLAG $BASE/$1/$SCR/* ../$SIM/scripts/$PROJ
+            $COMMAND $FLAG $BASE/$1/$SCR/* ../$SIM/scripts/$PROJ
         fi
     else
         echo "\n** The directory: $BASE/$1/$SCR/ does not exist, SKIPPING!\n"
