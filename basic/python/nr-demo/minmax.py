@@ -44,12 +44,11 @@ net.connect(generator,	finderA.getTermination('org/hanns/demonodes/pubsub/IN'))#
 net.connect(generator,	finderB.getTermination('org/hanns/demonodes/pubsub/IN')) 		# connect generator to the termnation on our neural module
 
 # create ANN with 100 neurons which approximates it's input 
-A=net.make('A',neurons=100,dimensions=2,radius=3)    				# identity transformation implemented by population of neurons
+A=net.make('A',neurons=200,dimensions=2,radius=8)    				# identity transformation implemented by population of neurons
 net.connect(finderA.getOrigin('org/hanns/demonodes/pubsub/OUT'),A)	# connect the origin on our module to the network
 
-B=net.make('B',neurons=100,dimensions=2,radius=3)    				
+B=net.make('B',neurons=200,dimensions=2,radius=8)    				
 net.connect(finderB.getOrigin('org/hanns/demonodes/pubsub/OUT'),	B)						
 
 
 print 'Configuration complete.'
-print 'Note: it may be necessary to clean build install several times project which is linked here..'

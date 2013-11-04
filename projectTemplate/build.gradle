@@ -21,7 +21,7 @@ apply plugin: 'maven'
 apply plugin: 'eclipse'
 // Create the runnable application from this project into build/lib/bin.. ? [./gradlew installApp]
 apply plugin: 'application'
-mainClassName       = 'org.ros.RosRun'
+mainClassName = 'org.ros.RosRun'
 
 // This configures the project to search for Maven libraries (rosjava: bootstrap.. and their dependencies)
 repositories {

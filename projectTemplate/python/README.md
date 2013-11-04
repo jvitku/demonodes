@@ -1,7 +1,7 @@
 Jython Integratioin with Nengo
 ------------------------------
 
-These files are mainly copied from demonodes/basic, for mode examples look there. Files in these folders will be symlinked or copied into the `nengo/simulator-ui/` subfolders for use in the NengoRos system. The script demonodes/linkdata helps with this.
+Files in these folders will be symlinked into the `nengo/simulator-ui/` subfolders for use in the NengoRos system.
 
 Naming Convention
 -------------------

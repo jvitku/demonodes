@@ -77,7 +77,7 @@ Launch subscriber to receive messages in a new terminal:
 	cd nengoros/projectTemplate
 	./build/install/projectTemplate/bin/projectTemplate org.hanns.demonodes.pubsub.DemoSubscriber
 
-Now, there should be two independently running ROSjava nodes which communicate over the TCP/IP vie the ROS network. 
+Now, there should be two independently running ROSjava nodes which communicate over the TCP/IP via the ROS network. Note that you can change some properties of nodes by adding optional command line arguments, for more information, see [remapping arguments](http://wiki.ros.org/Remapping%20Arguments).
 
 ### Integration with NengoROS
 In order to use this collection of nodes in Nengoros, you have to add a dependency of `nengo/simulator-ui` sub-project on your project. To do this, you have to:
@@ -138,23 +138,6 @@ Basically, you have to:
 3. Add these new templates into the `nengo/simulator-ui/python/nef/templates/__init__.py` file
 4. Restart Nengo, you should see your nodes in the left panel
 
-
-
-### Launching your Nodes as an Ordinary Part of ROS
-The second possibility is to launch these nodes as standalone applications, so there is no need for the Nengo simulator. Moreover, these nodes can communicate with help of either *jroscore* from the Nengoros project or *roscore* from typical ROS installation. In order to launch these nodes:
-
-1. Create script which is able to launch these nodes. From the root of your project, run:
-
-		./gradlew installApp
-2. Run your favorite ROS core, e.g. from the root of nengoros project:
-
-		./jroscore/jroscore 
-
-3. Run the auto-generated startup script with the name of node to launch, e.g. on unix system:
-
-		./build/install/projectTemplate/bin/projectTemplate org.hanns.myPackage.DemoPublisher
-
-Note that you can change some properties of nodes by adding optional command line arguments, for more information, see: http://wiki.ros.org/Remapping%20Arguments
 
 
 TODO
