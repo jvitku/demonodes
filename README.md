@@ -70,12 +70,12 @@ Run the core, e.g. for jroscore:
 Launch the generated script with the full node name in a new terminal:
 
 	cd nengoros/projectTemplate
-	./build/install/projectTemplate/bin/projectTemplate org.hanns.demonodes.pubsub.DemoPublisher
+	./build/install/projectTemplate/bin/projectTemplate org.hanns.myPackage.DemoPublisher
 	
 Launch subscriber to receive messages in a new terminal:
 
 	cd nengoros/projectTemplate
-	./build/install/projectTemplate/bin/projectTemplate org.hanns.demonodes.pubsub.DemoSubscriber
+	./build/install/projectTemplate/bin/projectTemplate org.hanns.myPackage.DemoSubscriber
 
 Now, there should be two independently running ROSjava nodes which communicate over the TCP/IP via the ROS network. Note that you can change some properties of nodes by adding optional command line arguments, for more information, see [remapping arguments](http://wiki.ros.org/Remapping%20Arguments).
 
