@@ -26,7 +26,7 @@ net.make_input('beta1',	[0])
 net.make_input('gamma1',[0.5]) 
 
 # Add it
-triangle = logic_gates.fuzzyMemTriangle("Triangle")
+triangle = temp_logic_gates.fuzzyMemTriangle("Triangle")
 net.add(triangle)
 
 # Wire inputs
