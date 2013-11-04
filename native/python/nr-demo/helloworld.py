@@ -44,4 +44,8 @@ input=FunctionInput('Randomized input', [FourierFunction(.5, 10, 6, 12),
 net.add(input)  
 
 print "OK, configuration done."
-print "The simulator consists of one dummy node without IO (just a representation of external native process) and one funciton generator."
+print "The simulator consists of one dummy node without ROS communication."
+print "The process just prints out to STDOUT (not redirected) and writes .."
+print "..data to the file nengo/simulator-ui/out_helloworld.txt"
+print "\nIf no data is written (no process running), it may be necessary"
+print " to recompoile the application for your platform (see demonodes/native/)."

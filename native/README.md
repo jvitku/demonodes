@@ -34,6 +34,9 @@ Then, the application can be launched by running the following script in Nengo c
 	run nr-demo/native/helloworld.py
 	
 
+Troubleshooting
+-------------------
+	
 To check whether the application is running, see the output text file: `nengo/simulator-ui/out_helloworld.txt` or its process, that is e.g. on OS X:
 
 	ps xm | grep demonodes
@@ -42,4 +45,7 @@ which returns something as:
 	
 	5953 s001  S+     0:00.01 ../../demonodes/native/a.out __ns:=HelloworldCPP __name:=Helloworld
  
+
+If no such process can be found and no data is written into the `nengo/simulator-ui/out_helloworld.txt`, it is necessary to recompile the native application for your platform, see *Usage*.
+
 
