@@ -10,7 +10,7 @@
       <groupId>ctu.nengoros</groupId>
       <artifactId>jroscore</artifactId>
       <version>0.0.2-SNAPSHOT</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>ros.rosjava_core</groupId>

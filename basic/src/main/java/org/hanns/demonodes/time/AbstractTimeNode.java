@@ -32,6 +32,8 @@ public abstract class AbstractTimeNode extends AbstractNodeMain{
 		if(pt.has(Parameters.USE_SIM_TIME)){
 			boolean waited=false;
 			// try to read the current time (time provider node probably not started yet)
+			// here, the CalcellableLoop cannot be executed without time provider, 
+			// so until the time provider is found, the node is hard to kill:-)
 			while(true){
 				try{
 					connectedNode.getCurrentTime();
@@ -52,12 +54,11 @@ public abstract class AbstractTimeNode extends AbstractNodeMain{
 				}
 			}
 		}else{
-			System.err.println(me+"Error! This node is supposed to be launched" +
+			System.err.println(me+"Warning! This node is supposed to be launched" +
 					" with parameter: /use_sim_time:=true, "+
 					"but this parameter is not set! Will use the wall time instead.");
 		}
 		log = connectedNode.getLog();
 	}
-
-
+	
 }
