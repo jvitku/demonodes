@@ -6,34 +6,51 @@ Author Jaroslav Vitku [vitkujar@fel.cvut.cz]
 
 About
 ------
-
-Helper for launching java-based implementation of ROS core from [rosjava_core](https://github.com/rosjava/rosjava_core) on unix-based systems. 
-
-
-About Nengoros
----------------
-
-This repository is a part of Hybrid Artificial Neural Network Systems (HANNS) project (see: [Nengoros pages](http://nengoros.wordpress.com) or [Our research](http://artificiallife.co.nf/) ). 
-
-Each node can be connected into a potentially heterogeneous network of nodes communicating via the [ROS](http://wiki.ros.org/), potentially [Nengoros](http://nengoros.wordpress.com). 
-
-This is ROS meta-package (currently without direct catkin support), a collection of ROS(java) nodes.
+These projects are part of [Nengoros](https://github.com/jvitku/nengoros) system - simulator of large scale hybrid neural networks.
 
 
-Usage
---------
+Demos
+-------
+
+Most of the tutorials can be found in README.md from the folder above, or [online](https://nengoros.wordpress.com/tutorials/). 
+
+Here are some of other, smaller tutorials:
 
 
- 
-Technical Notes
-------------------
+### Send the Clock data over the ROS network
 
-The best way how to install the Jroscore is to use them as a part of the [Nengoros](https://github.com/jvitku/nengoros) project. 
+Shows how to send Time information over the ROS network, to run the demo, start some roscore:
 
-But, since this package depends only on rosjava\_core, it can be used without Nengoros.
+	cd nengoros/jroscore && ./jroscore
+	
+Start a node which periodically publishes Clock data (e.g. run from the class files) from this folder run:
+	
+	java -cp bin/:../../nengo/lib-rosjava/* org.ros.RosRun org.hanns.demonodes.time.pubsub.Pub
+	
+
+Start a node which subscribes to the topic `clock` and receives messages normally, run this one:
+	
+	java -cp bin/:../../nengo/lib-rosjava/* org.ros.RosRun org.hanns.demonodes.time.pubsub.Sub
+
+Note that both nodes use `Wall` clock (time provided by the OS), so the subscriber also prints out these data, something like:
+
+	GetCurrentTIme method says this: 1383703785:529000000
+
+This time cannot be manipulated well. In order be able to control the speed of simulation, or playback the data, the ROS provides alternative for synchronizing Clock in the network.
+
+### Synchronizing Clock in the ROS Network
 
 
+We can run the same nodes, but now, we will setup the network where one ROS node will dictate the speed of time. 
 
-Troubleshooting
-------------------
+To do this, start ROS nodes with the parameter telling them to use the simulation time. This can be set e.g. from the command line. Start the publisher as normally. By publishing Clock data to the clock topic, this node now dictates the speed of time for other nodes:
 
+	java -cp bin/:../../nengo/lib-rosjava/* org.ros.RosRun org.hanns.demonodes.time.pubsub.Pub
+	
+Now run the subscriber which listens to the time (and also independently of this receives Clock messages in the code):
+
+	java -cp bin/:../../nengo/lib-rosjava/* org.ros.RosRun org.hanns.demonodes.time.pubsub.Sub /use_sim_time:=true
+	
+
+	
+	

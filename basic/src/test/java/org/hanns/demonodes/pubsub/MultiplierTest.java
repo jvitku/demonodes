@@ -1,10 +1,7 @@
 package org.hanns.demonodes.pubsub;
 
-//import static org.junit.Assert.*;
-//import org.junit.Test;
-
 /**
- * TODO make some tests, for example tests @see logic/gates.
+ * TODO make some tests, for example how to test ROS nodes @see logic/gates.
  * 
  * @author Jaroslav Vitku
  *
