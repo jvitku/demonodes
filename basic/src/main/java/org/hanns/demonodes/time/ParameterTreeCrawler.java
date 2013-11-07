@@ -8,7 +8,7 @@ import org.ros.node.parameter.ParameterTree;
 
 public class ParameterTreeCrawler {
 
-	private final String me = "[ParameterCrawler]";
+	private final String me = "[ParameterCrawler] ";
 	
 	private final ParameterTree t;
 
@@ -43,7 +43,7 @@ public class ParameterTreeCrawler {
 	
 	private boolean isEmpty(){
 		if(t.getNames().isEmpty()){
-			System.out.println(me+"Parameter three is empty");
+			System.out.println(me+"xxxxxxxxxxxxxxxxxxxxx !!!!!!!!!!!!!!!!!!! Parameter three is empty");
 			return true;
 		}
 		return false;
