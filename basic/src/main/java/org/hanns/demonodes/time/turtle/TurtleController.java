@@ -33,6 +33,7 @@ public class TurtleController extends AbstractNodeMain{
 	@Override
 	public void onStart(final ConnectedNode connectedNode){
 		publisher = connectedNode.newPublisher(myTopic, geometry_msgs.Twist._TYPE);
+		timePublisher = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
 
 		t = connectedNode.getCurrentTime();
 		ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
