@@ -1,5 +1,6 @@
 package org.hanns.demonodes.time.pubsub;
 
+import org.hanns.demonodes.time.ParameterTreeCrawler;
 import org.ros.concurrent.CancellableLoop;
 import org.ros.message.Duration;
 import org.ros.message.Time;
@@ -50,6 +51,9 @@ public class Pub extends AbstractNodeMain{
 	@Override
 	public void onStart(final ConnectedNode connectedNode) {
 
+		ParameterTreeCrawler ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
+		System.out.println("=========");
+		ptc.printNames();
 		pub = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
 
 		System.out.println("Now, getCurrentTime() method says: "+connectedNode.getCurrentTime().toString());

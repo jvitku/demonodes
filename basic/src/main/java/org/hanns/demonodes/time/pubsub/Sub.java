@@ -1,6 +1,7 @@
 package org.hanns.demonodes.time.pubsub;
 
 import org.hanns.demonodes.time.AbstractTimeNode;
+import org.hanns.demonodes.time.ParameterTreeCrawler;
 import org.ros.concurrent.CancellableLoop;
 import org.ros.message.MessageListener;
 import org.ros.message.Time;
@@ -21,17 +22,22 @@ import org.ros.node.topic.Subscriber;
  */
 public class Sub extends AbstractTimeNode {
 	
-	String cl = "clock";
+	String cl = "/clock";
 	private final int sleeptime = 300;
 	Subscriber<rosgraph_msgs.Clock> subscriber;
 	
 	
 	@Override
-	public GraphName getDefaultNodeName() { return GraphName.of("TimeSubscriner"); }
+	public GraphName getDefaultNodeName() { return GraphName.of("Sub"); }
 	
 	@Override
 	public void onStart(ConnectedNode connectedNode){
 		super.onStart(connectedNode);
+		
+		ParameterTreeCrawler ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
+		System.out.println("=========");
+		ptc.printNames();
+		
 		// subscribe to given topic
 		subscriber = connectedNode.newSubscriber(cl, rosgraph_msgs.Clock._TYPE);
 
