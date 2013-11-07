@@ -19,23 +19,24 @@ public class TurtleController extends AbstractNodeMain{
 	Publisher<geometry_msgs.Twist> publisher;
 
 	Publisher<rosgraph_msgs.Clock> timePublisher;
-	protected final java.lang.String cl = "clock";
+	protected final java.lang.String cl = "/clock";
 	private final int sleeptime = 1000;
 
 	private final String me = "[TwistBackend] ";
 
 	Time t;
-	Duration slowD = new Duration(1,0);
-	Duration fastD = new Duration(0,5000000);
+	Duration slowD = new Duration(0,500000);
+	Duration fastD = new Duration(3,5000000);
 
 	ParameterTreeCrawler ptc;
 	
 	@Override
 	public void onStart(final ConnectedNode connectedNode){
 		publisher = connectedNode.newPublisher(myTopic, geometry_msgs.Twist._TYPE);
-		//timePublisher = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
+		timePublisher = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
 
-		t = connectedNode.getCurrentTime();
+//		t = connectedNode.getCurrentTime();
+		t = new Time(0);
 		ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
 
 		connectedNode.executeCancellableLoop(new CancellableLoop() {
@@ -55,7 +56,7 @@ public class TurtleController extends AbstractNodeMain{
 				ptc.printAll();
 				poc++;
 
-				if(poc % 5==0){
+				if(poc % 10==0){
 					if(slow)
 						slow = false;
 					else
@@ -68,16 +69,17 @@ public class TurtleController extends AbstractNodeMain{
 
 
 				// send time 
-				//Clock mess = timePublisher.newMessage();
-				//mess.setClock(t);
-				//timePublisher.publish(mess);
+				Clock mess = timePublisher.newMessage();
+				mess.setClock(t);
+				timePublisher.publish(mess);
 
 				System.out.println("SENDING this time value: "+t.toString());
-
+				System.out.println("SENDING this data: ");
+				
 				// send command
 				float[] f = generateData();
 				send(f);
-
+				toAr(f);
 				Thread.sleep(sleeptime);
 			}
 		});
@@ -85,10 +87,11 @@ public class TurtleController extends AbstractNodeMain{
 
 
 	private float[] generateData(){
-		float[] out = new float[]{0,0,0,0,0,0};
+		float[] out = new float[]{0,0,1,1,0,0};
 
-		out[0] = (float) Math.sin(t.toSeconds());
-		out[1] = (float) Math.cos(t.toSeconds());
+		//out[2] = 5*(float) Math.sin(t.toSeconds());
+		
+	//	out[4] = 5*(float) Math.cos(t.toSeconds());
 
 		return out;
 	}
@@ -112,6 +115,12 @@ public class TurtleController extends AbstractNodeMain{
 		publisher.publish(rosMessage);
 	}
 
+	private void toAr(float[] data){
+		System.out.println(" ");
+		for(int i=0;i<data.length; i++)
+			System.out.print(" "+data[i]);
+		System.out.println(" ");
+	}
 
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of("turtlecommander"); }
