@@ -15,7 +15,7 @@ import rosgraph_msgs.Clock;
 
 public class TurtleController extends AbstractNodeMain{
 
-	private final String myTopic = "pose";
+	private final String myTopic = "turtle1/cmd_vel";
 	Publisher<geometry_msgs.Twist> publisher;
 
 	Publisher<rosgraph_msgs.Clock> timePublisher;
@@ -33,7 +33,7 @@ public class TurtleController extends AbstractNodeMain{
 	@Override
 	public void onStart(final ConnectedNode connectedNode){
 		publisher = connectedNode.newPublisher(myTopic, geometry_msgs.Twist._TYPE);
-		timePublisher = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
+		//timePublisher = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
 
 		t = connectedNode.getCurrentTime();
 		ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
@@ -68,9 +68,9 @@ public class TurtleController extends AbstractNodeMain{
 
 
 				// send time 
-				Clock mess = timePublisher.newMessage();
-				mess.setClock(t);
-				timePublisher.publish(mess);
+				//Clock mess = timePublisher.newMessage();
+				//mess.setClock(t);
+				//timePublisher.publish(mess);
 
 				System.out.println("SENDING this time value: "+t.toString());
 

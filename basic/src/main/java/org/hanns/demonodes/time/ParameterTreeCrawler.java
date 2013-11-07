@@ -20,8 +20,11 @@ public class ParameterTreeCrawler {
 	public void printAll(){
 		System.out.println("aaaaaaaaaall names are: "+t.getNames().toString());
 		
+		GraphName[] gn = t.getNames().toArray(new GraphName[0]);
 		
-		System.out.println("nssssaaaaames "+t.getNames().toArray().toString());
+		
+		System.out.println("nssssaaaaames "+t.getNames().toArray().toString()+" "+gn.length);
+		
 	}
 	
 	
