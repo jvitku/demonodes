@@ -1,130 +1,119 @@
 package org.hanns.demonodes.time.turtle;
 
-import org.ros.internal.message.Message;
-import org.ros.message.MessageListener;
+import geometry_msgs.Twist;
+
+import org.hanns.demonodes.time.ParameterTreeCrawler;
+import org.ros.concurrent.CancellableLoop;
+import org.ros.message.Duration;
+import org.ros.message.Time;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Publisher;
-import org.ros.node.topic.Subscriber;
 
+import rosgraph_msgs.Clock;
 
 public class TurtleController extends AbstractNodeMain{
 
 	private final String myTopic = "pose";
+	Publisher<geometry_msgs.Twist> publisher;
 
+	Publisher<rosgraph_msgs.Clock> timePublisher;
+	protected final java.lang.String cl = "clock";
+	private final int sleeptime = 1000;
+
+	private final String me = "[TwistBackend] ";
+
+	Time t;
+	Duration slowD = new Duration(1,0);
+	Duration fastD = new Duration(0,5000000);
+
+	ParameterTreeCrawler ptc;
+	
 	@Override
-	public void onStart(ConnectedNode connectedNode){
-		publisher = connectedNode.newPublisher(myTopic, MYTYPE);
-		rosMessage = publisher.newMessage();	
-		
-		MessageListener<geometry_msgs.Twist> ml = 
-				new MessageListener<geometry_msgs.Twist>() {
+	public void onStart(final ConnectedNode connectedNode){
+		publisher = connectedNode.newPublisher(myTopic, geometry_msgs.Twist._TYPE);
+
+		t = connectedNode.getCurrentTime();
+		ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
+
+		connectedNode.executeCancellableLoop(new CancellableLoop() {
+
+			int poc;
+			boolean slow;
+			@Override
+			protected void setup() {
+				poc=0;
+				slow = true;
+			}
+
 
 			@Override
-			public void onNewMessage(geometry_msgs.Twist f) {
-	//			thisone.checkDimensionSizes(f);
-				thisone.setReceivedRosMessage(f);		// save obtained Message
-				thisone.fireOnNewMessage(f);			// inform Nengo about new ROS message
+			protected void loop() throws InterruptedException {
+				ptc.printNames();
+				ptc.printAll();
+				poc++;
+
+				if(poc % 5==0){
+					if(slow)
+						slow = false;
+					else
+						slow = true;
+				}
+				if(slow)
+					t = t.add(slowD);
+				else
+					t = t.add(fastD);
+
+
+				// send time 
+				Clock mess = timePublisher.newMessage();
+				mess.setClock(t);
+				timePublisher.publish(mess);
+
+				System.out.println("SENDING this time value: "+t.toString());
+
+				// send command
+				float[] f = generateData();
+				send(f);
+
+				Thread.sleep(sleeptime);
 			}
-			
+		});
 	}
-	
 
-	// type of messages we can process here
-	public static final String MYTYPE="geometry_msgs/Twist";
-	
-	private String myTopic;
-	
-	private final int messageLength = 6;	// 2x3 floats: linear and angular velocity in x,y,z
-	private geometry_msgs.Twist rosMessage;
-	
-	Publisher<geometry_msgs.Twist> publisher;
-	Subscriber<geometry_msgs.Twist> subscriber;
 
-	private boolean pub;	// whether to publish or subscribe
-	
-	private final String me = "[TwistBackend] ";
-	
+	private float[] generateData(){
+		float[] out = new float[]{0,0,0,0,0,0};
 
-	/**
-	 * This thing gets data of given format and publishes them as a ROS message 
-	 * to a specified topic. This methods hold the necessary transformations and publishing.
-	 */
-	@Override
-	public void publish(float[] data){
-		if(!pub){
-			System.err.println(me+"I am set only to subscribe!");
+		out[0] = (float) Math.sin(t.toSeconds());
+		out[1] = (float) Math.cos(t.toSeconds());
+
+		return out;
+	}
+
+
+	private void send(float[] data){
+		if(data.length != 6){
+			System.err.println(me+"Wrong length of the message!");
 			return;
 		}
-		if(data.length != messageLength){
-			System.err.println(me+"wrong dimension of data: message: "+turtlesim.Pose._TYPE+
-					" is composed of "+messageLength+" floats");
-			return;
-		}
-		rosMessage = publisher.newMessage();
-		
+		Twist rosMessage = publisher.newMessage();
+
 		rosMessage.getAngular().setX(data[0]);
 		rosMessage.getAngular().setY(data[1]);
 		rosMessage.getAngular().setZ(data[2]);
-		
+
 		rosMessage.getLinear().setX(data[3]);
 		rosMessage.getLinear().setY(data[4]);
 		rosMessage.getLinear().setZ(data[5]);
-		
-        publisher.publish(rosMessage);
+
+		publisher.publish(rosMessage);
 	}
 
-	public void setReceivedRosMessage(geometry_msgs.Twist mess){
-		this.rosMessage=mess;
-	}
-	
-	/**
-	 * On each new message from ROS: store it, fire event: Backend:NewMessage.
-	 * @param me this class
-	 * @return ROS message listener
-	 */
-	private MessageListener<geometry_msgs.Twist> buildML(final TwistBackend thisone){
-		
-		MessageListener<geometry_msgs.Twist> ml = 
-				new MessageListener<geometry_msgs.Twist>() {
-
-			@Override
-			public void onNewMessage(geometry_msgs.Twist f) {
-	//			thisone.checkDimensionSizes(f);
-				thisone.setReceivedRosMessage(f);		// save obtained Message
-				thisone.fireOnNewMessage(f);			// inform Nengo about new ROS message
-			}
-		};
-		return ml;
-	}
-	
-	/**
-	 * Get message data (this receives arrays of ints, just cast them to floats).
-	 */
-	@Override
-	public float[] decodeMessage(Message mess) {
-		
-		float[] data = new float[messageLength];
-		// read linear velocity
-		data[0] = (float) (((geometry_msgs.Twist)mess).getLinear()).getX();
-		data[1] = (float) (((geometry_msgs.Twist)mess).getLinear()).getY();
-		data[2] = (float) (((geometry_msgs.Twist)mess).getLinear()).getZ();
-		
-		// read angular velocity
-		data[3] = (float) (((geometry_msgs.Twist)mess).getAngular()).getX();
-		data[4] = (float) (((geometry_msgs.Twist)mess).getAngular()).getY();
-		data[5] = (float) (((geometry_msgs.Twist)mess).getAngular()).getZ();
-		
-		return data;
-	}
 
 	@Override
-	public GraphName getDefaultNodeName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-
-	
+	public GraphName getDefaultNodeName() { return GraphName.of("turtlecommander"); }
 }
+
+
