@@ -29,6 +29,15 @@ public abstract class AbstractTimeNode extends AbstractNodeMain{
 	public void onStart(final ConnectedNode connectedNode) {
 		ParameterTree pt = connectedNode.getParameterTree();		
 
+		System.out.println("paaaaaaaaaaraaaaaaaaaaaameeeeeeeeee "+Parameters.USE_SIM_TIME);
+		
+		System.out.println("NOW "+pt.has(Parameters.USE_SIM_TIME));
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e2) {
+			e2.printStackTrace();
+		}
+		
 		if(pt.has(Parameters.USE_SIM_TIME)){
 			boolean waited=false;
 			// try to read the current time (time provider node probably not started yet)
