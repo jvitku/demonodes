@@ -13,7 +13,7 @@
 # 
 # choose between gradle:0 and eclipse:1
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -eq 0 ]; then
 	echo ""
 	echo "This script starts ROS node from class files produced by Eclipse (rosjava_core & nodes are from class files)"
 	echo "To start ROS node manually, run e.g.:\n\tjava -cp bin/:../../nengo/lib-rosjava/* org.ros.RosRun org.hanns.demonodes.time.pubsub.Sub [opt.args]\n"

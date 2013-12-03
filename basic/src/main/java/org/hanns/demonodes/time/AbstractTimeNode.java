@@ -29,11 +29,9 @@ public abstract class AbstractTimeNode extends AbstractNodeMain{
 	public void onStart(final ConnectedNode connectedNode) {
 		ParameterTree pt = connectedNode.getParameterTree();		
 
-		System.out.println("paaaaaaaaaaraaaaaaaaaaaameeeeeeeeee "+Parameters.USE_SIM_TIME);
-		
-		System.out.println("NOW "+pt.has(Parameters.USE_SIM_TIME));
+		System.out.println("tree has the param? NOW "+pt.has(Parameters.USE_SIM_TIME));
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(500);
 		} catch (InterruptedException e2) {
 			e2.printStackTrace();
 		}
