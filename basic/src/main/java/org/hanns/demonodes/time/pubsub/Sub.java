@@ -21,7 +21,7 @@ import org.ros.node.topic.Subscriber;
  *
  */
 public class Sub extends AbstractTimeNode {
-	
+	// paaaaaaaaaaraaaaaaaaaaaameeeeeeeeee
 	String cl = "/clock";
 	private final int sleeptime = 300;
 	Subscriber<rosgraph_msgs.Clock> subscriber;

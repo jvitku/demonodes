@@ -11,7 +11,7 @@
 # author Jaroslav Vitku [vitkujar@fel.cvut.cz]
 #
 # 
-# choose between gradle:0 and eclipse:1
+# E: choose between gradle:0 and eclipse:1
 
 if [ "$#" -eq 0 ]; then
 	echo ""
