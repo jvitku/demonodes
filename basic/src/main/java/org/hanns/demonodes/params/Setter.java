@@ -8,8 +8,6 @@ import org.ros.node.parameter.ParameterTree;
 
 public class Setter extends AbstractNodeMain{
 
-	
-
 	Log log;
 
 	private final String me="setter";
@@ -28,7 +26,6 @@ public class Setter extends AbstractNodeMain{
 		//pt.set(GraphName.of("/use_sim_time"), true);
 		//pt.set("/use_sim_time", true);
 		//pt.set(arg0, arg1)
-		
 		
 		ptc.printAll();
 	}

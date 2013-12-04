@@ -1,6 +1,5 @@
 package org.hanns.demonodes.params;
 
-
 import org.apache.commons.logging.Log;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
@@ -8,8 +7,6 @@ import org.ros.node.ConnectedNode;
 import org.ros.node.parameter.ParameterTree;
 
 public class Getter extends AbstractNodeMain{
-
-	
 
 	Log log;
 
