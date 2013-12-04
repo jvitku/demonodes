@@ -21,14 +21,21 @@ public class Setter extends AbstractNodeMain{
 		//System.out.println("parameter tree is empty? "+pt.get)
 		
 		System.out.println("\n-- \n");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
-		//pt.set("use_sim_time", true);
+		
+		pt.set("use_sim_time", true);
 		//pt.set(GraphName.of("/use_sim_time"), true);
 		//pt.set("/use_sim_time", true);
 		//pt.set(arg0, arg1)
 		
 		ptc.printAll();
 	}
+
 
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of(me); }

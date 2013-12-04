@@ -49,6 +49,7 @@ public class ParameterTreeCrawler {
 			try{
 				return gp(name,i);
 			}catch(Exception e){
+				//e.printStackTrace();
 			}
 		}
 		System.err.println("Parameter type not found!!!!");
@@ -64,13 +65,13 @@ public class ParameterTreeCrawler {
 		}
 		switch(no){
 		case 0:
-			return String.valueOf(t.getBoolean(name));
+			return t.getString(name);
 		case 1:
 			return String.valueOf(t.getDouble(name));
 		case 2:
 			return String.valueOf(t.getInteger(name));
 		case 3:
-			return t.getString(name);
+			return String.valueOf(t.getBoolean(name));
 		}
 		throw new Exception();
 	}
