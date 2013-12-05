@@ -22,7 +22,7 @@ import rosgraph_msgs.Clock;
  *  
  *  Here, the Pub node publishes Clock messages on the clock topic. 
  *  These messages can be received normally by subscribers, or can serve as
- *  master time in the ROS network, if the nodes are started with the parameter /use_sim_time:=true 
+ *  master time in the ROS network, if the nodes are started with the parameter /use_sim_time:=true
  *  
  * @author Jaroslav Vitku
  *
@@ -52,7 +52,6 @@ public class Pub extends AbstractNodeMain{
 	public void onStart(final ConnectedNode connectedNode) {
 
 		ParameterTreeCrawler ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
-		System.out.println("=========");
 		ptc.printNames();
 		pub = connectedNode.newPublisher(cl, rosgraph_msgs.Clock._TYPE);
 
@@ -79,10 +78,10 @@ public class Pub extends AbstractNodeMain{
 
 				if((poc++) == speedup){
 					System.out.println("\n\nSPEEDING UP the time!\n\n");
-					dd = new Duration(0,500000000);	// set new duration to 0.5 sec
+					dd = new Duration(20,500000000);	// set new duration to 0.5 sec
 				}else if(poc==slowdown){
 					System.out.println("\n\nSLOWING DOWN the time!\n\n");
-					dd = new Duration(1,500000000);	// set new duration to 1.5 sec
+					dd = new Duration(1,100000000);	// set new duration to 1.5 sec
 				}
 				
 				Clock mess = pub.newMessage();

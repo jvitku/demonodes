@@ -8,6 +8,12 @@ import org.ros.node.parameter.ParameterTree;
 
 import ctu.nengoros.rosparam.ParameterTreeCrawler;
 
+/**
+ * Just prints out all parameters from the parameter tree.
+ * 
+ * @author Jaroslav Vitku
+ *
+ */
 public class Getter extends AbstractNodeMain{
 
 	Log log;

@@ -42,11 +42,11 @@ dependencies {
     testCompile 'junit:junit:4.10'
     // the difference: in order to clean build this project as standalone, the maven repo should be used
     // if the depedency is not found, ./gradlew install (jroscore)
-    compile 'ctu.nengoros:jrosparam:0.0.2-SNAPSHOT'
-    testCompile 'ctu.nengoros:jrosparam:0.0.2-SNAPSHOT' 
-
     compile 'ctu.nengoros:jroscore:0.0.2-SNAPSHOT' 
     testCompile 'ctu.nengoros:jroscore:0.0.2-SNAPSHOT' 
+
+    compile 'ctu.nengoros:jrosparam:0.0.2-SNAPSHOT'
+    testCompile 'ctu.nengoros:jrosparam:0.0.2-SNAPSHOT'
 
     // in order to link this to source of jroscore in multiproject nengoros, this should be used
     //testCompile project('jroscore')
