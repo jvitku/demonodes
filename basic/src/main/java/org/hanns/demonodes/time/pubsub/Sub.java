@@ -17,12 +17,10 @@ import ctu.nengoros.rosparam.ParameterTreeCrawler;
  * 
  * java -cp bin/:../../nengo/lib-rosjava/* org.ros.RosRun org.hanns.demonodes.time.pubsub.Sub use_sim_time:=true
  *
- * 
  * @author Jaroslav Vitku
  *
  */
 public class Sub extends AbstractTimeNode {
-	// paaaaaaaaaaraaaaaaaaaaaameeeeeeeeee
 	String cl = "/clock";
 	private final int sleeptime = 300;
 	Subscriber<rosgraph_msgs.Clock> subscriber;
