@@ -2,12 +2,13 @@ package org.hanns.demonodes.time.pubsub;
 
 import java.util.Map;
 
-import org.hanns.demonodes.params.ParameterTreeCrawler;
 import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Subscriber;
+
+import ctu.nengoros.rosparam.ParameterTreeCrawler;
 
 /**
  * Shows that time can be received as a normal message. 

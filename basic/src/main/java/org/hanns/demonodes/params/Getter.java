@@ -6,6 +6,8 @@ import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.parameter.ParameterTree;
 
+import ctu.nengoros.rosparam.ParameterTreeCrawler;
+
 public class Getter extends AbstractNodeMain{
 
 	Log log;

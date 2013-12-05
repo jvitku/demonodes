@@ -6,6 +6,8 @@ import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.parameter.ParameterTree;
 
+import ctu.nengoros.rosparam.ParameterTreeCrawler;
+
 public class Setter extends AbstractNodeMain{
 
 	Log log;
@@ -40,7 +42,6 @@ public class Setter extends AbstractNodeMain{
 		ParameterTreeCrawler ptcc = new ParameterTreeCrawler(ptt);
 		ptcc.printAll();
 	}
-
 
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of(me); }
