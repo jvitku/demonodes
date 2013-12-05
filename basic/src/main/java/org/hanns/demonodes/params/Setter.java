@@ -14,6 +14,7 @@ public class Setter extends AbstractNodeMain{
 	
 	@Override
 	public void onStart(final ConnectedNode connectedNode) {
+		//connectedNode.
 		ParameterTree pt = connectedNode.getParameterTree();
 		ParameterTreeCrawler ptc = new ParameterTreeCrawler(pt);
 		ptc.printAll();
@@ -34,6 +35,10 @@ public class Setter extends AbstractNodeMain{
 		//pt.set(arg0, arg1)
 		
 		ptc.printAll();
+		
+		ParameterTree ptt = connectedNode.getParameterTree();
+		ParameterTreeCrawler ptcc = new ParameterTreeCrawler(ptt);
+		ptcc.printAll();
 	}
 
 

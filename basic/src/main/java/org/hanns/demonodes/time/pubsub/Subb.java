@@ -1,11 +1,11 @@
 package org.hanns.demonodes.time.pubsub;
 
+import java.util.Map;
+
 import org.hanns.demonodes.params.ParameterTreeCrawler;
-import org.hanns.demonodes.time.AbstractTimeNode;
 import org.ros.concurrent.CancellableLoop;
-import org.ros.message.MessageListener;
-import org.ros.message.Time;
 import org.ros.namespace.GraphName;
+import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Subscriber;
 
@@ -20,38 +20,54 @@ import org.ros.node.topic.Subscriber;
  * @author Jaroslav Vitku
  *
  */
-public class Sub extends AbstractTimeNode {
+public class Subb extends AbstractNodeMain {
 	// paaaaaaaaaaraaaaaaaaaaaameeeeeeeeee
-	String cl = "/clock";
 	private final int sleeptime = 300;
+	private final String me = "[Pubb] ";
 	Subscriber<rosgraph_msgs.Clock> subscriber;
-	
-	
+
+
 	@Override
 	public GraphName getDefaultNodeName() { return GraphName.of("Sub"); }
-	
+
 	@Override
 	public void onStart(ConnectedNode connectedNode){
-		
-		super.onStart(connectedNode);
-		
-		ParameterTreeCrawler ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
-		System.out.println("=========");
-		ptc.printNames();
-		
-		// subscribe to given topic
-		subscriber = connectedNode.newSubscriber(cl, rosgraph_msgs.Clock._TYPE);
 
-		subscriber.addMessageListener(new MessageListener<rosgraph_msgs.Clock>() {
-			// print messages to console
-			@Override
-			public void onNewMessage(rosgraph_msgs.Clock message) {
-				Time tt = message.getClock();
-				
-					System.out.println("----RECEIVED message with these data:"+tt.toString());
-				}
-		});
+		//super.onStart(connectedNode);
+
+		ParameterTreeCrawler ptc = new ParameterTreeCrawler(connectedNode.getParameterTree());
+		ptc.printAll();
+		System.out.println(GraphName.of("use_sim_time"));
+		Map<GraphName,GraphName> map = connectedNode.getResolver().getRemappings();
 		
+		System.out.println("remapped?? "+
+				connectedNode.getResolver().getRemappings().containsKey(GraphName.of("/use_sim_time")));
+		
+		boolean waited=false;
+		// try to read the current time (time provider node probably not started yet)
+		// here, the CalcellableLoop cannot be executed without time provider, 
+		// so until the time provider is found, the node is hard to kill:-)
+		while(true){
+			try{
+				
+				connectedNode.getCurrentTime();
+				System.out.println(me+"time found, it is:"+connectedNode.getCurrentTime());
+				break;
+			}catch (NullPointerException e) {
+				try {
+					if(waited)
+						System.out.print(".");
+					else{
+						waited = true;
+						System.out.print(me+"waiting for sim_time provider..");
+					}
+
+					Thread.sleep(100);
+				} catch (InterruptedException e1) {
+				}
+			}
+		}
+
 		this.showTime(connectedNode);
 	}
 
@@ -68,7 +84,7 @@ public class Sub extends AbstractTimeNode {
 
 			@Override
 			protected void loop() throws InterruptedException {
-				
+
 				System.out.println("(mess.no.+"+poc+++") Now, getCurrentTime() method says: "+connectedNode.getCurrentTime().toString());
 				Thread.sleep(sleeptime);
 			}
