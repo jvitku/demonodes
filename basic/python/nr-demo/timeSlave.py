@@ -69,7 +69,9 @@ print 'Now it is expected that you start some external TimeProvider, which'
 print 'publishes these data'
 
 print 'Note that this is experimental and e.g. GUI does not reflect time values received.'
+print 'Note that ROS nodes will not be completely inifialized before any time data received'
 
 print ''
 print 'To run the clockMaster, use e.g. from the folder nengoros/demonodes/basic the command:'
 print './runner org.hanns.demonodes.time.pubsub.Pub /use_sim_time:=false'
+
