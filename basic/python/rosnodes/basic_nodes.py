@@ -18,6 +18,8 @@ from ctu.nengoros.modules.impl import DefaultNeuralModule as SynNeuralModule
 minmaxint =   	"org.hanns.demonodes.pubsub.MinMaxInt"
 mmf = 			"org.hanns.demonodes.pubsub.MinMaxFloat"
 
+time = 			"org.hanns.demonodes.time.TimeAwareNode"
+
 
 # Finds min and max values form vector of 4 input floats and publishes them as Integers
 # Asynchronous communication with Nengo.
@@ -58,4 +60,21 @@ def async_minmaxfloat_node(name):
 	module.createEncoder("org/hanns/demonodes/pubsub/IN", "float", 4)  			
 	module.createDecoder("org/hanns/demonodes/pubsub/OUT", "float", 2)    		
 	return module
+
+def async_timeaware_node(name):
+	g = NodeGroup("AsynTimeAwareNode", True);        			
+	g.addNode(time, "AsynTimeAwareNode", "java");     		
+	module = AsynNeuralModule(name+'_AsynTimeAwareNode', g)    	
+	module.createEncoder("org/hanns/demonodes/pubsub/IN", "float", 4)			
+	module.createDecoder("org/hanns/demonodes/pubsub/OUT", "float", 2)
+	return module
+	
+def sync_timeaware_node(name):
+	g = NodeGroup("SynMinMaxFloat", True);        			
+	g.addNode(time, "SynMinMaxFloat", "java");     		
+	module = SynNeuralModule(name+'_SynMinMaxFloat', g)    	
+	module.createEncoder("org/hanns/demonodes/pubsub/IN", "float", 4)  			
+	module.createDecoder("org/hanns/demonodes/pubsub/OUT", "float", 2)    		
+	return module
+
 

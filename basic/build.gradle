@@ -33,13 +33,27 @@ repositories {
 }
 
 // Define the version and name of my stack (ROS convention)
-version             = '0.0.1-SNAPSHOT'
+version             = '0.0.2-SNAPSHOT'
 group               = 'org.hanns.demonodes'
 
 // This project depends on compilation of rosjava_core
 dependencies {
     compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
     testCompile 'junit:junit:4.10'
-    testCompile 'ctu.nengoros:jroscore:0.0.1-SNAPSHOT'
+
+    // the difference: in order to clean build this project as standalone, the maven repo should be used
+    // if the depedency is not found, ./gradlew install (jroscore)
+    compile 'ctu.nengoros:jroscore:0.0.2-SNAPSHOT' 
+    testCompile 'ctu.nengoros:jroscore:0.0.2-SNAPSHOT' 
+
+    compile 'ctu.nengoros:jrosparam:0.0.2-SNAPSHOT'
+    testCompile 'ctu.nengoros:jrosparam:0.0.2-SNAPSHOT'
+
+    // in order to link this to source of jroscore in multiproject nengoros, this should be used
+    //testCompile project('jroscore')
+    //compile project('jroscore')
+	//compile project('jrosparam')
+	//testCompile project('jrosparam')
+
 }
 
