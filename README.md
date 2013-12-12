@@ -114,11 +114,11 @@ In order to use this collection of nodes in Nengoros, you have to add a dependen
 
 In order to copy (or symlink) additional scripts and GUI data (described below) the script called `demonodes/linkdata` can be used. This script deploys/links the following files into the Nengo simulator:
 
-* RosNode helper scripts from:	[YourProjectFolder]/python/rosnodes/*
-* Drag&Drop GUI images from: 	[YourProjectFolder]/images/nengoIcons/*
-* Drag&drop scripts from: 		[YourProjectFolder]/python/nef/templates/*
-* Other scripts from: 			[YourProjectFolder]/python/scripts/*
-* Nengoros demo scripts from:	[YourProjectFolder]/python/nr-demo/*
+* RosNode helper scripts from:	`[YourProjectFolder]/python/rosnodes/*`
+* Drag&Drop GUI images from: 	`[YourProjectFolder]/images/nengoIcons/*`
+* Drag&drop scripts from: 		`[YourProjectFolder]/python/nef/templates/*`
+* Other scripts from: 			`[YourProjectFolder]/python/scripts/*`
+* Nengoros demo scripts from:	`[YourProjectFolder]/python/nr-demo/*`
 
 For more information about script usage, run: 
 
@@ -134,13 +134,11 @@ From now, you can create simple python script which creates representation of yo
 * places these new neural modules into the network
 * connect them with other components
 
-is contained under `projectTemplate/python/myNetwork.py`. First, the script should be linked under the Nengo simulator:
-
-	./linkdata -cf ../projectTemplate 
+is contained under `projectTemplate/python/myNetwork.py`, and after use of `linkdata` script, this file should be linked under `nengoros/nengo/simulator-ui/nr-demo/projectTemplate`. 
 	
 Then, the script can be launched, simply run the `./nengo` and then write into the command-line interface: `run` with relative path to your script, so e.g.:
 	
-	run projectTemplate/myNetwork.py
+	run nr-demo/projectTemplate/myNetwork.py
 	
 
 #### Adding Drag and Drop Icon into the Nengo GUI
@@ -160,4 +158,5 @@ Basically, you have to:
 TODO
 ---------
 
+* 	Update scirpts under `projectTemplate/python` to match information in this `README.md`
 * 	The tool should generate also files for ROS meta-package (for catkin support (package.xml et al)).
