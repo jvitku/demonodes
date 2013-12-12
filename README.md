@@ -110,6 +110,21 @@ In order to use this collection of nodes in Nengoros, you have to add a dependen
 
 		NODES=$NODES:$N_HOME/../../projectTemplate/build/libs/projectTemplate-0.0.1-SNAPSHOT.jar
 
+#### Link, or copy project scripts to the Nengo Simulator
+
+In order to copy (or symlink) additional scripts and GUI data (described below) the script called `demonodes/linkdata` can be used. This script deploys/links the following files into the Nengo simulator:
+
+* RosNode helper scripts from:	[YourProjectFolder]/python/rosnodes/*
+* Drag&Drop GUI images from: 	[YourProjectFolder]/images/nengoIcons/*
+* Drag&drop scripts from: 		[YourProjectFolder]/python/nef/templates/*
+* Other scripts from: 			[YourProjectFolder]/python/scripts/*
+* Nengoros demo scripts from:	[YourProjectFolder]/python/nr-demo/*
+
+For more information about script usage, run: 
+
+	./linkdata -h
+
+
 #### Launch your Nodes from the Nengo Simulator
 
 From now, you can create simple python script which creates representation of your ROS nodes in the Nengo. Example of simple script, which:
@@ -119,24 +134,26 @@ From now, you can create simple python script which creates representation of yo
 * places these new neural modules into the network
 * connect them with other components
 
-An example of how to create the script is contained in `projectTemplate/python/myNetwork.py`. It is good to symlink this script into the `scripts` folder:
+is contained under `projectTemplate/python/myNetwork.py`. First, the script should be linked under the Nengo simulator:
 
-	cd nengo/simulator-ui/scripts
-	ln -s ../../../projectTemplate/python/myNetwork.py
-
-Then, to run the script, simply run the `./nengo` and then write into the command-line interface: `run` with relative path to your script, so e.g.:
+	./linkdata -cf ../projectTemplate 
 	
-	run scripts/myNetwork.py
+Then, the script can be launched, simply run the `./nengo` and then write into the command-line interface: `run` with relative path to your script, so e.g.:
+	
+	run projectTemplate/myNetwork.py
 	
 
 #### Adding Drag and Drop Icon into the Nengo GUI
-This is not required, but allows you to easily add nodes into the simulation in the GUI. For more information about how to add a GUI template into the Nengo simulator, see the tutorial from the authors of Nengo on: http://nengo.ca/docs/html/advanced/dragndrop.html .
+
+This is not mandatory, but allows user to easily add nodes into the simulation in the GUI and to simplify use of new components in jython scripts. For more information about how to add a GUI template into the Nengo simulator, see the tutorial from the authors of Nengo on: http://nengo.ca/docs/html/advanced/dragndrop.html .
+
 Basically, you have to:
 
-1. Add image of each node (group of nodes)under: `nengo/simulator-ui/images/nengoIcons`
-2. For each new node (group of nodes), add an initialization script under: `nengo/simulator-ui/python/nef/templates`. You can use an example template contained here, under `projectTemplate/python/nef/templates/myTemplate.py`.
-3. Add these new templates into the `nengo/simulator-ui/python/nef/templates/__init__.py` file
-4. Restart Nengo, you should see your nodes in the left panel
+1. Add image of each node (group of nodes)under: `projectTemplate/images/nengoIcons`
+2. For each new node (group of nodes), add an initialization script under: `projectTemplate/python/nef/templates`. 
+3. Link these files into the Nengo simulator (./linkdata -h) 
+4. Add these new templates into the `nengo/simulator-ui/python/nef/templates/__init__.py` file
+5. Restart Nengo, you should see your nodes in the left panel
 
 
 
