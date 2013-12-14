@@ -1,14 +1,13 @@
 package org.hanns.demonodes.privateParams;
 
-
 import org.apache.commons.logging.Log;
 import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
-import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Publisher;
 
 import ctu.nengoros.rosparam.impl.PrivateRosparam;
+import ctu.nengoros.time.AbstractTimeNode;
 
 /**
  * Just a simple ROS node computing value of equation: y=a*sin(b*t), 
@@ -23,7 +22,7 @@ import ctu.nengoros.rosparam.impl.PrivateRosparam;
  * @author Jaroslav Vitku
  *
  */
-public class SetPrivateParameters extends AbstractNodeMain{
+public class SetPrivateParameters extends AbstractTimeNode{
 
 	public static final String NAME = "SetPrivateParametersNode";
 	public final String me = "["+NAME+"] ";
@@ -57,13 +56,13 @@ public class SetPrivateParameters extends AbstractNodeMain{
 
 	@Override
 	public void onStart(final ConnectedNode connectedNode){
-
+		super.onStart(connectedNode);
+		
 		// here is how you read private parameters
 		r = new PrivateRosparam(connectedNode);
 		a = r.getMyInteger("a", defA);
 		b = r.getMyInteger("b",defB);
 		shouldLog = r.getMyBoolean("shouldLog", defShouldLog);
-
 
 		final Log log = connectedNode.getLog();
 		

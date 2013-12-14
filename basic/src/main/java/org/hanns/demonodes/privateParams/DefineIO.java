@@ -6,12 +6,12 @@ import org.apache.commons.logging.Log;
 import org.ros.concurrent.CancellableLoop;
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
-import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Publisher;
 import org.ros.node.topic.Subscriber;
 
 import ctu.nengoros.rosparam.impl.PrivateRosparam;
+import ctu.nengoros.time.AbstractTimeNode;
 
 /**
  * Define number inputs and outputs by means of command line parameters.
@@ -24,8 +24,10 @@ import ctu.nengoros.rosparam.impl.PrivateRosparam;
  *  
  * @author Jaroslav Vitku
  *
+ * NodeGroup(
+ *
  */
-public class DefineIO extends AbstractNodeMain{
+public class DefineIO extends AbstractTimeNode{
 
 	public static final String NAME = "SetPrivateParametersNode";
 	public final String me = "["+NAME+"] ";
@@ -77,6 +79,8 @@ public class DefineIO extends AbstractNodeMain{
 
 	@Override
 	public void onStart(final ConnectedNode connectedNode){
+		super.onStart(connectedNode);
+		
 		log = connectedNode.getLog();
 		
 		// read parameters
