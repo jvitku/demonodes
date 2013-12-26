@@ -10,3 +10,9 @@
 .metadata/*
 basic/.settings/org.eclipse.jdt.core.prefs
 basic/build/poms/pom-default.xml
+
+build/tmp/
+build/libs/
+
+basic/build/tmp/
+basic/build/libs/
