@@ -1,0 +1,235 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="org.hanns.myPackage.fuzzy.membership.CommTests" tests="1" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="b.local" time="1.388063203837E9">
+  <properties/>
+  <testcase name="triangleTest" classname="org.hanns.myPackage.fuzzy.membership.CommTests" time="0.547"/>
+  <system-out><![CDATA[[RosRunner]: starting the node named: org.hanns.myPackage.fuzzy.membership.impl.Triangular
+[RosRunner]: Node /FuzzyTriangleMembership is being started!
+[RosRunner]: starting the node named: org.hanns.myPackage.fuzzy.membership.ThreeParamTester
+[RosRunner]: Node /threeParamsTester is being started!
+---------------------------
+.............sent this10.0and received this:0.0
+.............sent this-10.0and received this:0.0
+.............sent this5.0and received this:0.0
+.............sent this-5000.0and received this:0.0
+.............sent this200.0and received this:0.0
+.............sent this-0.5and received this:0.0
+.............sent this0.5and received this:0.0
+.............sent this0.0and received this:1.0
+.............sent this-0.25and received this:0.5
+.............sent this0.25and received this:0.5
+[RosRunner]: Node /threeParamsTester is being shut down..
+[RosRunner]: Node /threeParamsTester is completely down!
+[RosRunner]: Node /FuzzyTriangleMembership is being shut down..
+[RosRunner]: Node /FuzzyTriangleMembership is completely down!
+]]></system-out>
+  <system-err><![CDATA[[Jroscore]: Server successfully launched on address: localhost 11311.
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar <init>
+INFO: MasterXmlRpcEndpoint URI: http://localhost:11311/
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar <init>
+INFO: MasterXmlRpcEndpoint URI: http://localhost:11311/
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+INFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+INFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+INFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+INFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+INFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+INFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
+INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, [http://127.0.0.1:56024/]>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+INFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, []>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, [http://127.0.0.1:56024/]>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+INFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+INFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, [http://127.0.0.1:56024/]>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, [http://127.0.0.1:56024/]>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+INFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, [http://127.0.0.1:56024/]>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+INFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Changing remote alpha to: "[F@168c660d and waiting for new x
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Changing remote gamma to: "[F@1aa5d24b and waiting for new x
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: 10.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: -10.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: 5.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: -5000.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: 200.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: -0.5
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: 0.5
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: 0.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 1.0 !! on topic: logic/gates/outa y is: 1.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 1.0
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: -0.25
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.5 !! on topic: logic/gates/outa y is: 0.5
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.5
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Sending data (x) to be computed remotely, sending: 0.25
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received data, publishing this: 0.5 !! on topic: logic/gates/outa y is: 0.5
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+INFO: Received these data: 0.5
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+INFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+INFO: Shutdown successful.
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
+INFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+INFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+INFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+INFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+INFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+INFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
+INFO: Response<Success, Success, 1>
+XII 26, 2013 2:06:43 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+INFO: Shutdown successful.
+[Jroscore]: OK, shutting down the server
+[Jroscore]: Shutdown complete, exiting.
+]]></system-err>
+</testsuite>
