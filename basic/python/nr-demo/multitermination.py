@@ -79,4 +79,7 @@ net.connect(gen3, module2.newTerminationFor(F2FPubSub.ann2ros))         # Connne
 net.connect(gen1, module2.newTerminationFor(F2FPubSub.ann2ros,0.5))     # everything multiply by 0.5 (default Termination unconnected)
 net.connect(gen2, module2.newTerminationFor(F2FPubSub.ann2ros,[0.01,0.1,0.02,0.02])) # Connnect new Termination with weighted matrix
 
-print 'Configuration complete.'
+print 'ROS node called MinMaxFloat searches for min and max in the vector of 4 values.'
+print 'Two NeuralModules (each with own ROS node) are connected to generators'
+print 'One Module has Encoder with default Termination, the other one has added 3 custom Terminations'
+print 'These Terminations can have weight (or weight matrix) specified as shown in the script.'
