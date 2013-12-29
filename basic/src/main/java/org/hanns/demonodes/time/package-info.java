@@ -3,7 +3,7 @@
  * These nodes use Nengo simulator as a Clock master, therefore entire simulation
  * is controlled from Nengo simulator which generates time-steps.
  * 
- *     @see http://wiki.ros.org/Clock
+ * @see <a href="http://wiki.ros.org/Clock">clock</a>
  *     
  */
 /**

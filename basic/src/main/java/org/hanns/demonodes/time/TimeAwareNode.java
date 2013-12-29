@@ -16,12 +16,18 @@ import ctu.nengoros.time.AbstractTimeNode;
  * but the resulting minimum and maximum values multiplies by current simulation time
  * in seconds.
  * 
- * @see: http://nengoros.wordpress.com/rosjava-tutorials/
+ * @see <a href="http://nengoros.wordpress.com/rosjava-tutorials/">nengoros rosjava tutirals</a>
  * 
  * Current time is:
- * -Nengo simulation time (by default) (that is simulated time, @see: http://wiki.ros.org/Clock )
- * -The global WallTime (if the `RosUtils.setTimeIgnore()` is used) (pretty arbitrary increasing number)
- * -Time provided from an external source (if the `RosUtils.setTimeSlave()` is used) (experimental)
+ * <ul>
+ * 	<li>Nengo simulation time (by default) (that is simulated time, @see <a href="http://wiki.ros.org/Clock">clock</a> ) </li>
+ * 
+ * 	<li>The global WallTime (if the RosUtils.setTimeIgnore() is used) 
+ * (pretty arbitrary increasing number)</li>
+ * 
+ * 	<li>Time provided from an external source (if the RosUtils.setTimeSlave() 
+ * is used) (experimental)</li>
+ * </ul>
  * 
  * @author Jaroslav Vitku
  *
