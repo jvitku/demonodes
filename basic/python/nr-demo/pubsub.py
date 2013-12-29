@@ -12,8 +12,7 @@ import nef
 from ca.nengo.math.impl import FourierFunction
 from ca.nengo.model.impl import FunctionInput
 from ca.nengo.model import Units
-#from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule
-from ctu.nengoros.modules.impl import DefaultAsynNeuralModule as AsynNeuralModule
+from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule
 from ctu.nengoros.comm.nodeFactory import NodeGroup as NodeGroup
 from ctu.nengoros.comm.rosutils import RosUtils as RosUtils
 
@@ -32,13 +31,13 @@ net.add_to_nengo()  # here: delete old (toplevel) network and replace it with th
 ################ Run two groups of nodes (conenct them in nengo)
 g = NodeGroup("Publisher", True);        			
 g.addNode(pub, "Publisher", "java");     	# add the publisher node
-module = AsynNeuralModule("Publisher", g)    		
+module = NeuralModule("Publisher", g)    		
 module.createDecoder("org/hanns/demonodes/pubsub", "float", 7) 
 net.add(module)	
 
 g2 = NodeGroup("Subbscriber", True);        			
 g2.addNode(sub, "Subbscriber", "java");     	# add the publisher node
-module2 = AsynNeuralModule("Subscriber", g2)    		
+module2 = NeuralModule("Subscriber", g2)    		
 module2.createEncoder("org/hanns/demonodes/pubsub", "float", 7)
 net.add(module2)	
 

@@ -10,8 +10,7 @@
 import nef
 # Note that you can run the node in both, synchronous and asynchronous mode, see below:
 # In the synchronous mode, simulator expects message each time step.
-from ctu.nengoros.modules.impl import DefaultAsynNeuralModule as NeuralModule # asynchornous mode
-#	from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule # synchronous mode
+from ctu.nengoros.modules.impl import DefaultNeuralModule as NeuralModule # synchronous mode by default
 
 from ctu.nengoros.comm.nodeFactory import NodeGroup as NodeGroup
 from ctu.nengoros.comm.rosutils import RosUtils as RosUtils
@@ -44,7 +43,7 @@ def make(net,name='NeuralModule which interfaces demoPublisher with the Nengo si
     g = NodeGroup(name, independent);    				# Create group of nodes (represented as SimpleNode in the GUI)
     g.addNode(pub, "publisher", "java");  				# start java node and name it subscriber in the ROS network
     
-    module = NeuralModule('Publisher_'+name, g) 	    # Construct the neural module (small ROS network: node+modem )
+    module = NeuralModule('Publisher_'+name, g, False) 	# Construct the neural module in the asynchronous mode
     module.createDecoder("org/hanns/demonodes/pubsub", "float",7)  # Define IO: termination = input of neural module (n*int)
 
     many=net.add(module)                    			# add it into Nengo simulator
