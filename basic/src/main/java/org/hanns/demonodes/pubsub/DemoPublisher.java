@@ -45,7 +45,6 @@ public class DemoPublisher extends AbstractNodeMain {
 		
 		log.info("HEY! Node ready now! Starting sending mesages..");
 		
-		// ROS uses these cancellable loops
 		connectedNode.executeCancellableLoop(new CancellableLoop() {
 		      private int poc;
 
