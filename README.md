@@ -158,5 +158,6 @@ Basically, you have to:
 TODO
 ---------
 
+* 	linkdata script: add ability to delete target data
 * 	Update scirpts under `projectTemplate/python` to match information in this `README.md`
 * 	The tool should generate also files for ROS meta-package (for catkin support (package.xml et al)).
