@@ -40,9 +40,9 @@ group               = 'org.hanns.demonodes'
 dependencies {
     
     
-    compile fileTree(dir: '../../maven/', include: '**/*.jar')
- 	runtime fileTree(dir: '../../maven/', include: '**/*.jar')
- 	testCompile fileTree(dir: '../../maven/', include: '**/*.jar')
+    compile fileTree(dir: '../../maven/jroscore/', include: '**/*.jar')
+ 	runtime fileTree(dir: '../../maven/jroscore/', include: '**/*.jar')
+ 	testCompile fileTree(dir: '../../maven/jroscore/', include: '**/*.jar')
     
     compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
     testCompile 'junit:junit:4.10'
