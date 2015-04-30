@@ -1,161 +1,161 @@
 org.hanns.myPackage.fuzzy.membership.CommTestóÇ[Jroscore]: Server successfully launched on address: localhost 11311.
-triangleTesôÉXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar <init>
-triangleTesôINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠtriangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesô×INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôÖINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÉXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar <init>
-triangleTesôINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠtriangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesôÑINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÔXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+triangleTesôÉIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar <init>
+triangleTesôINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesô×INFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôÖINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÉIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar <init>
+triangleTesôINFO: MasterXmlRpcEndpoint URI: http://localhost:11311/ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesôÑINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÔIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberAdded
 triangleTesôäINFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôĞINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesôôINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesôìINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôçXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesôôINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôĞINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesôìINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôçIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
 triangleTesôãINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÔXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+triangleTesôÔIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberAdded
 triangleTesôæINFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôóINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÔXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
-triangleTesôåINFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÔXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôóINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÔIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberAdded
 triangleTesôæINFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesôğINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÔXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberAdded
+triangleTesôÔIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberAdded
+triangleTesôåINFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+triangleTesôÔIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberAdded
 triangleTesôæINFO: Registering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesôğINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherAdded
-triangleTesôğINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:56024/]>ŠtriangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôëINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôçXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
-triangleTesôåINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:56024/]>ŠtriangleTesôçXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
-triangleTesôåINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôïINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôçXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+triangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesôğINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:57050/]>ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesôğINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:57050/]>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherAdded
+triangleTesôğINFO: Registering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôçIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
 triangleTesôåINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:56024/]>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:56024/]>ŠtriangleTesôçXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+triangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôëINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, []>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:57050/]>ŠtriangleTesôçIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+triangleTesôåINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+triangleTesôçIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
 triangleTesôäINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôïINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:56024/]>ŠtriangleTesôæXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
-triangleTesôïINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôÄINFO: Changing remote alpha to: "[F@168c660d and waiting for new x
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôÄINFO: Changing remote gamma to: "[F@1aa5d24b and waiting for new x
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: 10.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôïINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôçIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultSubscriber$1 onMasterRegistrationSuccess
+triangleTesôåINFO: Subscriber registered: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:57050/]>ŠtriangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôïINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, [http://127.0.0.1:57050/]>ŠtriangleTesôæIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterRegistrationSuccess
+triangleTesôïINFO: Publisher registered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôÄINFO: Changing remote alpha to: "[F@63465272 and waiting for new x
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôÄINFO: Changing remote gamma to: "[F@5c8f7f73 and waiting for new x
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: 10.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: -10.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: -10.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: 5.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: 5.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÂINFO: Sending data (x) to be computed remotely, sending: -5000.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: 200.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: 200.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: -0.5ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: -0.5ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: 0.5ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: 0.5ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.0 !! on topic: logic/gates/outa y is: 0.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: 0.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: 0.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 1.0 !! on topic: logic/gates/outa y is: 1.0
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 1.0ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: -0.25ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 1.0ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: -0.25ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.5 !! on topic: logic/gates/outa y is: 0.5
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.5ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Sending data (x) to be computed remotely, sending: 0.25ŠtriangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.5ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Sending data (x) to be computed remotely, sending: 0.25ŠtriangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
 triangleTesôÓINFO: Received data, publishing this: 0.5 !! on topic: logic/gates/outa y is: 0.5
-triangleTesôÃXII 26, 2013 2:06:43 ODP. org.ros.internal.node.RosoutLogger info
-triangleTesôINFO: Received these data: 0.5ŠtriangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôòINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôîINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôÓINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôòINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôòINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôñINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÖXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+triangleTesôÃIV 30, 2015 10:59:11 DOP. org.ros.internal.node.RosoutLogger info
+triangleTesôINFO: Received these data: 0.5ŠtriangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôòINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôîINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôÓINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôòINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôòINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôñINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confa>>, Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÖIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberRemoved
 triangleTesôçINFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôíINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôñINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôÒINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôñINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:56028/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
-triangleTesôINFO: Shutdown successful.ŠtriangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôöINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÕXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onPublisherRemoved
-triangleTesôÙINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÖXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôíINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/ina>>, Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôÒINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôñINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confc>>, Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôñINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</threeParamsTester, http://127.0.0.1:57054/>, TopicIdentifier</logic/gates/confb>>, Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+triangleTesôINFO: Shutdown successful.ŠtriangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôöINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÕIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onPublisherRemoved
+triangleTesôÙINFO: Unregistering publisher: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÖIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberRemoved
 triangleTesôèINFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÖXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+triangleTesôÖIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberRemoved
 triangleTesôæINFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/ina>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÖXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+triangleTesôÖIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberRemoved
 triangleTesôèINFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confc>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÖXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar onSubscriberRemoved
+triangleTesôÖIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar onSubscriberRemoved
 triangleTesôèINFO: Unregistering subscriber: Subscriber<Topic<TopicIdentifier</logic/gates/confb>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>
-triangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôõINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèXII 26, 2013 2:06:43 ODP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
-triangleTesôØINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:56024/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
-triangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍXII 26, 2013 2:06:43 ODP. org.ros.internal.node.client.Registrar callMaster
-triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÓXII 26, 2013 2:06:43 ODP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôØINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</rosout>>, Topic<TopicIdentifier</rosout>, TopicDescription<rosgraph_msgs/Log, acffd30cd6b6de30f120938c17c593fb>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôèIV 30, 2015 10:59:11 DOP. org.ros.internal.node.topic.DefaultPublisher$1 onMasterUnregistrationSuccess
+triangleTesôõINFO: Publisher unregistered: Publisher<PublisherDefinition<PublisherIdentifier<NodeIdentifier</FuzzyTriangleMembership, http://127.0.0.1:57050/>, TopicIdentifier</logic/gates/outa>>, Topic<TopicIdentifier</logic/gates/outa>, TopicDescription<std_msgs/Float32MultiArray, 6a40e0ffa6a17a503ac3f8616991b1f6>>>>
+triangleTesôÍIV 30, 2015 10:59:11 DOP. org.ros.internal.node.client.Registrar callMaster
+triangleTesôINFO: Response<Success, Success, 1>ŠtriangleTesôÓIV 30, 2015 10:59:11 DOP. org.ros.node.DefaultNodeMainExecutor safelyShutdownNode
 triangleTesôINFO: Shutdown successful.Šorg.hanns.myPackage.fuzzy.membership.CommTestó[Jroscore]: OK, shutting down the serverŠorg.hanns.myPackage.fuzzy.membership.CommTestó[Jroscore]: Shutdown complete, exiting.Š
