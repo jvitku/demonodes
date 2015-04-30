@@ -38,13 +38,19 @@ group               = 'org.hanns.demonodes'
 
 // This project depends on compilation of rosjava_core
 dependencies {
+    
+    
+    compile fileTree(dir: '../../maven/', include: '**/*.jar')
+ 	runtime fileTree(dir: '../../maven/', include: '**/*.jar')
+ 	testCompile fileTree(dir: '../../maven/', include: '**/*.jar')
+    
     compile 'ros.rosjava_core:rosjava:0.0.0-SNAPSHOT'
     testCompile 'junit:junit:4.10'
 
     // the difference: in order to clean build this project as standalone, the maven repo should be used
     // if the depedency is not found, ./gradlew install (jroscore)
-    compile 'ctu.nengoros:jroscore:0.0.12-SNAPSHOT' 
-    testCompile 'ctu.nengoros:jroscore:0.0.12-SNAPSHOT' 
+    compile 'ctu.nengoros:jroscore:0.0.6-SNAPSHOT' 
+    testCompile 'ctu.nengoros:jroscore:0.0.6-SNAPSHOT' 
 
     // in order to link this to source of jroscore in multiproject nengoros, this should be used
     //testCompile project('jroscore')
